@@ -75,4 +75,15 @@ Instead of repeating the same condition check in every function that requires it
 - https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fdao%2FProposals.sol#L224
 - https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fdao%2FProposals.sol#L233
 
+# [07] Line Length
+
+### Description
+Max line length must be no more than `120` but many lines are extended past this length.
+
+### Instance:
+https://github.com/code-423n4/2024-01-salty/blob/main/src%2Flaunch%2FAirdrop.sol#L11
+
+###Recommendation
+> Consider cutting down the line length below 120.
+
 
