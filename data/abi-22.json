@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "abi",
+  "risk": "3",
+  "title": "Pools contract will enter broken state when passing large numbers to the _addLiquidity function ",
+  "issueId": 22,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/22"
+}
