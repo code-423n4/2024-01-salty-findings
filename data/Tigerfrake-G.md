@@ -18,3 +18,6 @@ If the following variables can’t be made constant, they should still be made s
 
 ### Instances:
 
+- https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fdao%2FDAOConfig.sol#L28
+- https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fdao%2FDAOConfig.sol#L57
+- https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fdao%2FDAOConfig.sol#L61
