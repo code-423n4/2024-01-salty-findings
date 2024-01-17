@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xAlix2",
+  "risk": "3",
+  "title": "User can prevent anyone from liquidating him, by continuously adding dust liquidity",
+  "issueId": 24,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/24"
+}
