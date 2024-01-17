@@ -30,7 +30,7 @@ The time difference between events can be estimated using block.number and the a
 # [03] Missing or Incomplete NatSpec
 
 ### Description
-Some functions are missing @notice/@dev NatSpec comments for the function, @param for all/some of their parameters and @return for return values. Given that NatSpec is an important part of code documentation, this affects code comprehension, auditability and usability.
+Some functions are missing `@notice/@dev` NatSpec comments for the function, `@param` for all/some of their parameters and `@return` for return values. Given that NatSpec is an important part of code documentation, this affects code comprehension, auditability and usability.
 
 ### Instances:
 All contracts
@@ -38,4 +38,12 @@ All contracts
 ### Recommendation
 > Consider adding in full NatSpec comments for all functions to have complete code documentation for future use.
 
+# [04] Unchecked External Calls
 
+### Description:
+External fucntion calls can introduce vulnerabilities when not properly validated. Trusting external calls without proper checks can lead to unintended behavior or even attacks.
+
+Example: the `withdrawArbitrageProfits()` function fully trusts that `pools.withdraw()` function it calls within it will function as intended without any checks for its success.
+
+### Instances:
+https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fdao%2FDAO.sol#L304
