@@ -86,4 +86,12 @@ https://github.com/code-423n4/2024-01-salty/blob/main/src%2Flaunch%2FAirdrop.sol
 ###Recommendation
 > Consider cutting down the line length below 120.
 
+# [08] Incorrect syntax in require() statement 
 
+### Description:
+The correct syntax for using `require` in Solidity is `require(!success)`. The space between `!` and `success` is not needed and will cause a compilation error.
+
+### Instances:
+- https://github.com/code-423n4/2024-01-salty/blob/main/src%2Flaunch%2FAirdrop.sol#L49
+- https://github.com/code-423n4/2024-01-salty/blob/main/src%2Flaunch%2FAirdrop.sol#L59
+- https://github.com/code-423n4/2024-01-salty/blob/main/src%2Flaunch%2FAirdrop.sol#L78
