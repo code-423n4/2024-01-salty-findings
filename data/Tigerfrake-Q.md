@@ -47,3 +47,18 @@ Example: the `withdrawArbitrageProfits()` function fully trusts that `pools.with
 
 ### Instances:
 https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fdao%2FDAO.sol#L304
+
+# [05] Undocumented Value Literal
+
+### Description:
+The value literal 200000 ether is hardcoded to the variable `bootstrappingRewards`, however, it is undocumented and unclearly depicted.
+
+```Solidity
+uint256 public bootstrappimgRewards = 200000 ether;
+```
+
+### Instance:
+https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fdao%2FDAOConfig.sol#L24
+
+### Recommendation:
+We advise the special underscore (_) separator to be applied to it (i.e. 200000 would become 200_000) 
