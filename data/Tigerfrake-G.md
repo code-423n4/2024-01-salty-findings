@@ -21,3 +21,12 @@ If the following variables can’t be made constant, they should still be made s
 - https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fdao%2FDAOConfig.sol#L28
 - https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fdao%2FDAOConfig.sol#L57
 - https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fdao%2FDAOConfig.sol#L61
+
+# [G-3] Use `constants` instead of `type(uintX).max`
+
+### Description:
+Using `constants` instead of `type(uintX).max` saves gas in Solidity. This is because the `type(uintX).max` function has to dynamically calculate the maximum value of a `uint256`, which can be expensive in terms of gas. `Constants`, on the other hand, are stored in the `bytecode` of your contract, so they do not have to be recalculated every time you need them. 
+Saves 13 GAS
+
+### Instance:
+https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fdao%2FProposals.sol#L165
