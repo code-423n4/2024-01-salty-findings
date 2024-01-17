@@ -62,3 +62,15 @@ https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fdao%2FDAOConfig.sol#
 
 ### Recommendation:
 We advise the special underscore (_) separator to be applied to it (i.e. 200000 would become 200_000) 
+
+# [06] For same condition checks, use modifiers
+
+### Description:
+The main advantage of using `modifiers` for the same condition checks in different functions is code `reusability and readability`. 
+Instead of repeating the same condition check in every function that requires it, you can define a `modifier` once and then apply it to any function that needs it. This makes your code cleaner and easier to maintain.
+
+### Instances:
+- https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fdao%2FProposals.sol#L224
+- https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fdao%2FProposals.sol#L233
+
+
