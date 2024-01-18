@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "t0x1c",
+  "risk": "2",
+  "title": "`confirmationWallet` can cause `activeTimelock` to be further delayed if approving an already approved proposal",
+  "issueId": 50,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/50"
+}
