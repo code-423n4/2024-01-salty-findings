@@ -95,3 +95,15 @@ The correct syntax for using `require` in Solidity is `require(!success)`. The s
 - https://github.com/code-423n4/2024-01-salty/blob/main/src%2Flaunch%2FAirdrop.sol#L49
 - https://github.com/code-423n4/2024-01-salty/blob/main/src%2Flaunch%2FAirdrop.sol#L59
 - https://github.com/code-423n4/2024-01-salty/blob/main/src%2Flaunch%2FAirdrop.sol#L78
+
+# [09] Function && Variable Naming Convention
+
+### Description:
+The linked variables do not conform to the standard naming convention of Solidity whereby `functions and variable names(local and state) utilize the mixedCase format` unless variables are declared as `constant in which case they utilize the UPPER_CASE_WITH_UNDERSCORES format`. `Private variables and functions should lead with an underscore`.
+
+### Instances:
+
+
+### Recommendation:
+> Consider naming conventions utilized by the linked statements are adjusted to reflect the correct type of declaration according to the Solidity.
+
