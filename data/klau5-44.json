@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "klau5",
+  "risk": "2",
+  "title": "proposeWallets: Because it does not reset proposedMainWallet on rejection, it may not be able to change wallet forever",
+  "issueId": 44,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/44"
+}
