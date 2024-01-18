@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "jesjupyter",
+  "risk": "2",
+  "title": "setContracts can be called multiple times due to lack of check",
+  "issueId": 39,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/39"
+}
