@@ -96,14 +96,14 @@ The correct syntax for using `require` in Solidity is `require(!success)`. The s
 - https://github.com/code-423n4/2024-01-salty/blob/main/src%2Flaunch%2FAirdrop.sol#L59
 - https://github.com/code-423n4/2024-01-salty/blob/main/src%2Flaunch%2FAirdrop.sol#L78
 
-# [09] Function && Variable Naming Convention
+# [09] Unbounded loop
 
 ### Description:
-The linked variables do not conform to the standard naming convention of Solidity whereby `functions and variable names(local and state) utilize the mixedCase format` unless variables are declared as `constant in which case they utilize the UPPER_CASE_WITH_UNDERSCORES format`. `Private variables and functions should lead with an underscore`.
+New items are `pushed` into the following arrays but there is no option to `pop` them out. Currently, the array can grow indefinitely. 
+E.g. there’s no maximum limit and there’s no functionality to remove array values.
+
+If the array grows too large, calling relevant functions might run out of gas and revert. 
+Calling these functions could result in a DOS condition.
 
 ### Instances:
-
-
-### Recommendation:
-> Consider naming conventions utilized by the linked statements are adjusted to reflect the correct type of declaration according to the Solidity.
-
+- https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fstaking%2FStaking.sol#L71
