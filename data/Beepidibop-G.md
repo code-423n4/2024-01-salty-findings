@@ -50,7 +50,7 @@ Instead, you can just send the ETH back to the confirmation wallet, even if the 
 
 https://github.com/code-423n4/2024-01-salty/blob/f742b554e18ae1a07cb8d4617ec8aa50db037c1c/src/ManagedWallet.sol#L59-L69
 
-## [GAS-3] `ManagedWallet`: `activeTimelock` Don't Need to be Updated for a Rejection
+## [GAS-3] `ManagedWallet`: `activeTimelock` Don't Need to Be Updated for a Rejection
 
 You can remove `activeTimelock = type(uint256).max;` for a rejection since `activeTimelock` will already be at `uint256.max` (either due to the constructor starting state or because `changeWallets()` changed it to `uint256.max` before the proposal is made).
 
@@ -89,3 +89,70 @@ You can remove `activeTimelock = type(uint256).max;` for a rejection since `acti
 ### Link To Affected Code
 
 https://github.com/code-423n4/2024-01-salty/blob/f742b554e18ae1a07cb8d4617ec8aa50db037c1c/src/ManagedWallet.sol#L59-L69
+
+## [GAS-4] `Liquidizer`: `_possiblyBurnUSDS():usdsThatShouldBeBurned` can be Cached to Save Gas
+
+`usdsThatShouldBeBurned` is read multiple times and overwritten from storage. It can be cached into the stack for better gas usage.
+
+### Improved Function:
+
+```
+    function _possiblyBurnUSDS() internal
+
+        {
+
+        uint256 _usdsThatShouldBeBurned = usdsThatShouldBeBurned;
+
+        // Check if there is USDS to burn
+
+        if ( _usdsThatShouldBeBurned == 0 )
+
+            return;
+
+  
+
+        uint256 usdsBalance = usds.balanceOf(address(this));
+
+        if ( usdsBalance >= _usdsThatShouldBeBurned )
+
+            {
+
+            // Burn only up to usdsThatShouldBeBurned.
+
+            // Leftover USDS will be kept in this contract in case it needs to be burned later.
+
+            _burnUSDS( _usdsThatShouldBeBurned );
+
+            usdsThatShouldBeBurned = 0;
+
+            }
+
+        else
+
+            {
+
+            // The entire usdsBalance will be burned - but there will still be an outstanding balance to burn later
+
+            _burnUSDS( usdsBalance );
+
+            usdsThatShouldBeBurned = _usdsThatShouldBeBurned - usdsBalance;
+
+  
+
+            // As there is a shortfall in the amount of USDS that can be burned, liquidate some Protocol Owned Liquidity and
+
+            // send the underlying tokens here to be swapped to USDS
+
+            dao.withdrawPOL(salt, usds, PERCENT_POL_TO_WITHDRAW);
+
+            dao.withdrawPOL(dai, usds, PERCENT_POL_TO_WITHDRAW);
+
+            }
+
+        }
+```
+
+### Link To Affected Code
+
+https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/stable/Liquidizer.sol#L101-L126
+
