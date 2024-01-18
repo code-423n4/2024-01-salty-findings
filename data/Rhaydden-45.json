@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Rhaydden",
+  "risk": "2",
+  "title": "Front-Runnning in liquidateuser function in CollateralAndLiquidity.sol",
+  "issueId": 45,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/45"
+}
