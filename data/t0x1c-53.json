@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "t0x1c",
+  "risk": "2",
+  "title": "setContracts() can be called multiple times allowing owner to set addresses more than once",
+  "issueId": 53,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/53"
+}
