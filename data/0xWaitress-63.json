@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xWaitress",
+  "risk": "2",
+  "title": "quorum of a proposal would change base on the amount of staked salt after the proposal went live",
+  "issueId": 63,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/63"
+}
