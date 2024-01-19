@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "t0x1c",
+  "risk": "2",
+  "title": "Incorrect calculation to check if difference in price feeds is within the `maximumPriceFeedPercentDifferenceTimes1000` range",
+  "issueId": 54,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/54"
+}
