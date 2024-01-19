@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "thekmj",
+  "risk": "2",
+  "title": "Chainlink price feed uses BTC, not WBTC. In case of depegging, oracles will become easier to manipulate.",
+  "issueId": 60,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/60"
+}
