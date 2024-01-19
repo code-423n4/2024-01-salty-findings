@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "haxatron",
+  "risk": "2",
+  "title": "The actual remaining ratio after reward can be lower than the minimum intended 105%",
+  "issueId": 64,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/64"
+}
