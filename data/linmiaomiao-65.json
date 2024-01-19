@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "linmiaomiao",
+  "risk": "2",
+  "title": "When adding liquidity with useZapping = true, due to calculation errors in _determineZapSwapAmount, the liquidity obtained by the user will be less than the liquidity deserved",
+  "issueId": 65,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/65"
+}
