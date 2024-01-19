@@ -10,3 +10,28 @@ See: https://github.com/OpenZeppelin/openzeppelin-contracts/blob/86bd4d73896afcb
 ### Instances:
 - https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fdao%2FDAO.sol#L187
 - https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fdao%2FDAO.sol#L194
+
+# [G-02] Emit local variables instead of state variable. 
+(Save ~100 Gas)
+
+### Instance:
+- https://github.com/code-423n4/2024-01-salty/blob/main/src%2FManagedWallet.sol#L42-L55
+
+```Solidity
+        function proposeWallets( address _proposedMainWallet, address _proposedConfirmationWallet ) external
+                
+    //... require statements 
+              proposedMainWallet = _proposedMainWallet;
+                proposedConfirmationWallet = _proposedConfirmationWallet;
+
+                emit WalletProposal(proposedMainWallet, proposedConfirmationWallet);
+                }
+```
+
+### Description:
+Since we are setting our `state variables` `proposedMainWallet` and `proposedConfirmationWallet` to the function parameter `_proposedMainWallet` and `_proposedConfirmationWallet` respectively, we should `emit the function parameter` as it is cheaper to read compared to the `state variable`:
+
+```Solidity
+                emit WalletProposal(proposedMainWallet, proposedConfirmationWallet);
+```
+
