@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xWaitress",
+  "risk": "2",
+  "title": "creating proposal through _possiblyCreateProposal uses a string as the key, which can be frontrun in Ddos",
+  "issueId": 57,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/57"
+}
