@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "xiao",
+  "risk": "2",
+  "title": "ManagedWallet.sol does not have a withdrawal function. The funds are locked in the contract and cannot be withdrawn.",
+  "issueId": 59,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/59"
+}
