@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "51l3nt",
+  "risk": "3",
+  "title": "Off-by-one error if minUnstakeWeeks and maxUnstakeWeeks are equal",
+  "issueId": 73,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/73"
+}
