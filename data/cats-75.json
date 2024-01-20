@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "cats",
+  "risk": "2",
+  "title": "Raising of `minimumCollateralRatioPercent` can be back-run to liquidate positions before users can react",
+  "issueId": 75,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/75"
+}
