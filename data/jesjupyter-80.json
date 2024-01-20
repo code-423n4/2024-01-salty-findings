@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "jesjupyter",
+  "risk": "2",
+  "title": "The maxPendingTokensForWhitelisting restriction is broken",
+  "issueId": 80,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/80"
+}
