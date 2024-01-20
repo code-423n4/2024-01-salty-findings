@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Tigerfrake",
+  "risk": "2",
+  "title": "Addition of Liquidity for Duplicate Tokens can be made possible through _depositLiquidityAndIncreaseShare() which is against the protocol. ",
+  "issueId": 77,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/77"
+}
