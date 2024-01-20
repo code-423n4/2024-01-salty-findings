@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "eeshenggoh",
+  "risk": "3",
+  "title": "Liquidity Provider will never EARN rewards because of division rounding down",
+  "issueId": 79,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/79"
+}
