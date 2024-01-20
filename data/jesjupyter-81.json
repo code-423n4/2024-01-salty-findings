@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "jesjupyter",
+  "risk": "3",
+  "title": "Malicious User can fill _openBallotsForTokenWhitelisting with customized/fake/malicious/low-valued tokens by front-running",
+  "issueId": 81,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/81"
+}
