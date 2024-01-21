@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "igbinosuneric",
+  "risk": "3",
+  "title": "Exploiting Unbounded Array Input in 'addSALTRewards' for DoS Vulnerability in StakingRewards.sol",
+  "issueId": 98,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/98"
+}
