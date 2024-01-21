@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "ewah",
+  "risk": "2",
+  "title": "User Balance Lock-Up Due to Dust Withdrawal Logic",
+  "issueId": 93,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/93"
+}
