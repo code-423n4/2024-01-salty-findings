@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "ayden",
+  "risk": "2",
+  "title": "Precision lost when calculate unstake can lead to user unable to claim token",
+  "issueId": 94,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/94"
+}
