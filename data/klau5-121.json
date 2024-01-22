@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "klau5",
+  "risk": "3",
+  "title": "_possiblyBurnUSDS: Requesting a POL despite having enough collateral tokens, which could exhaust DAO-owned tokens and manipulate the price of the token",
+  "issueId": 121,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/121"
+}
