@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Pelz",
+  "risk": "3",
+  "title": "Unauthorized Airdrop Eligibility Due to Missing Ballot Finalization Check in BootstrapBallot::vote",
+  "issueId": 100,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/100"
+}
