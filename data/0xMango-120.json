@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xMango",
+  "risk": "2",
+  "title": "Potential sandwich attacks on newly created pools",
+  "issueId": 120,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/120"
+}
