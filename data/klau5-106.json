@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "klau5",
+  "risk": "3",
+  "title": "borrowUSDS: Incorrectly transfers USDS, which can exhaust the DAO's tokens and manipulate the token price",
+  "issueId": 106,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/106"
+}
