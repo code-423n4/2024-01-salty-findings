@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "igbinosuneric",
+  "risk": "3",
+  "title": "Exploitable Division by Zero Vulnerability in Liquidity Rewards Distribution Mechanism of SaltRewards.sol Leading to Denial of Service (DoS) in DeFi Ecosystems",
+  "issueId": 124,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/124"
+}
