@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Pelz",
+  "risk": "2",
+  "title": "Lack of possible minimum ballot duration validation in BootstrapBallot constructor",
+  "issueId": 99,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/99"
+}
