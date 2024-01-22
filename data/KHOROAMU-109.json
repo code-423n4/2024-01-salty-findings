@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "KHOROAMU",
+  "risk": "2",
+  "title": "The repeated check of `reserves.reserve0` in `Pools.removeLiquidity` affects price stability and exchange functionality.",
+  "issueId": 109,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/109"
+}
