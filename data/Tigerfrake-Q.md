@@ -28,6 +28,9 @@ The time difference between events can be estimated using `block.number` and the
 
 ### Instances:
 https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fdao%2FProposals.sol#L392
+```Solidity
+        if (block.timestamp < ballot.ballotMinimumEndTime )
+```
 
 # [03] Missing or Incomplete NatSpec
 
@@ -90,6 +93,9 @@ https://github.com/code-423n4/2024-01-salty/blob/main/src%2Flaunch%2FAirdrop.sol
 
 ### Description:
 The correct syntax for using `require` in Solidity is `require(!success)`. The space between `!` and `success` is not needed and will cause a compilation error.
+```Solidity
+            require( ! claimingAllowed, "Cannot authorize after claiming is allowed" );
+```
 
 ### Instances:
 - https://github.com/code-423n4/2024-01-salty/blob/main/src%2Flaunch%2FAirdrop.sol#L49
@@ -104,6 +110,9 @@ E.g. there’s no maximum limit and there’s no functionality to remove array v
 
 If the array grows too large, calling relevant functions might run out of gas and revert. 
 Calling these functions could result in a DOS condition.
+```Solidity
+                _userUnstakeIDs[msg.sender].push( unstakeID );
+```
 
 ### Instances:
 - https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fstaking%2FStaking.sol#L71
