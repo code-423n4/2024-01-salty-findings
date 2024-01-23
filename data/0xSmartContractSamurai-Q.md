@@ -56,3 +56,63 @@ Function in question:
 		saltRewards.sendInitialSaltRewards(5 * MILLION_ETHER, poolIDs );
     	}
 ```
+=======
+=======
+
+1. `ManagedWallet::receive()` - L65: Contract intended to receive ETH via `receive()` but seems to be no way to ever get any ETH out again, which is problematic unless its deliberate intention of protocol team?
+
+- .05 ether isnt a small amount, currently it's around $125, so when this is sent to this contract 10 times, it's already $1250 of ETH funds stuck forever in the contract...
+
+- I checked and didn't see any methods/functions to withdraw the ETH funds again...
+
+```solidity
+	// The confirmation wallet confirms or rejects wallet proposals by sending a specific amount of ETH to this contract
+    receive() external payable
+    	{
+    	require( msg.sender == confirmationWallet, "Invalid sender" );
+
+		// Confirm if .05 or more ether is sent and otherwise reject.
+		// Done this way in case custodial wallets are used as the confirmationWallet - which sometimes won't allow for smart contract calls.
+    	if ( msg.value >= .05 ether )
+    		activeTimelock = block.timestamp + TIMELOCK_DURATION; // establish the timelock
+    	else
+			activeTimelock = type(uint256).max; // effectively never
+        }
+```
+RECOMMENDATION:
+
+- add withdraw method with access control so that admin/owner can withdraw the ETH if ever necessary.
+
+via `transfer()`:
+```solidity
+    // Function to allow the owner to withdraw ETH from the contract
+    function withdraw(uint256 amount) external onlyOwner {
+        require(amount > 0, "Withdrawal amount must be greater than 0");
+        require(address(this).balance >= amount, "Insufficient balance in the contract");
+
+        // Transfer ETH to the owner
+        payable(owner).transfer(amount);
+
+        // Emit event
+        emit Withdrawal(owner, amount);
+    }
+```
+OR
+
+via `call()`:
+```solidity
+function withdraw(uint256 amount) external onlyOwner {
+    require(amount > 0, "Withdrawal amount must be greater than 0");
+    require(address(this).balance >= amount, "Insufficient balance in the contract");
+
+    // Call with explicit gas and value
+    (bool success, ) = payable(owner).call{value: amount, gas: gasleft()}("");
+    require(success, "Transfer failed");
+
+    // Emit event
+    emit Withdrawal(owner, amount);
+}
+```
+=======
+=======
+
