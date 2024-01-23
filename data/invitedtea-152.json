@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "invitedtea",
+  "risk": "2",
+  "title": "Lack of Timestamp and Block Number Validation in BootstrapBallot.vote",
+  "issueId": 152,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/152"
+}
