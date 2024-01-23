@@ -107,3 +107,20 @@ Calling these functions could result in a DOS condition.
 
 ### Instances:
 - https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fstaking%2FStaking.sol#L71
+
+# [10] Precision Loss When Dividing Odd Integers by Two
+
+### Description:
+The contract has a flaw where it may `lose precision when dividing odd integers by two`. This
+is because in Solidity, integer division is floor division, meaning that the result of the division operation will be the largest integer less than or equal to the exact result. Therefore,
+when an odd integer is divided by two, the result will be rounded down, leading to a loss of precision.
+
+Instances:
+https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fprice_feed%2FPriceAggregator.sol#L139
+```Solidity
+                uint256 averagePrice = ( priceA + priceB ) / 2;
+```
+
+### Recommendation:
+When dividing an amount by two, consider taking the first amount as the division result by
+two, and the second one to be the total amount minus the first one.
