@@ -66,3 +66,65 @@ function quoteAmountIn(  IPools pools, IERC20[] memory tokens, uint256 amountOut
 		return amountIn;
 		}
 ```
+
+## REDUNDANT ARRAY INITIALIZATION
+
+Declaring Arrays in Solidity by default assigns all the elements to 0 values therefore any attempt to overwrite them again with 0 is redundant.
+
+The array secondsAgo was found to be affected on Line 52
+
+https://github.com//code-423n4/2024-01-salty/blob/main/src/price_feed/CoreUniswapFeed.sol#L54-L54
+
+```
+secondsAgo[1] = 0; // to (now)
+```
+
+## CONSTANT STATE VARIABLES
+The contract has defined state variables whose values are never modified throughout the contract.
+The variables whose values never change should be marked as constant to save gas.
+
+https://github.com//code-423n4/2024-01-salty/blob/main/src/dao/Proposals.sol#L45-L45
+
+```
+EnumerableSet.UintSet private _allOpenBallots;
+```
+https://github.com//code-423n4/2024-01-salty/blob/main/src/dao/Proposals.sol#L48-L48
+```
+EnumerableSet.UintSet private _openBallotsForTokenWhitelisting;
+```
+https://github.com//code-423n4/2024-01-salty/blob/main/src/pools/PoolsConfig.sol#L29-L29
+```
+EnumerableSet.Bytes32Set private _whitelist;
+```
+https://github.com//code-423n4/2024-01-salty/blob/main/src/launch/Airdrop.sol#L23-L23
+```
+EnumerableSet.AddressSet private _authorizedUsers;
+```
+https://github.com//code-423n4/2024-01-salty/blob/main/src/stable/CollateralAndLiquidity.sol#L46-L46
+```
+EnumerableSet.AddressSet private _walletsWithBorrowedUSDS;
+```
+
+## LONG REQUIRE/REVERT STRINGS
+The require() and revert() functions take an input string to show errors if the validation fails.
+This strings inside these functions that are longer than 32 bytes require at least one additional MSTORE, along with additional overhead for computing memory offset, and other parameters.
+
+https://github.com//code-423n4/2024-01-salty/blob/main/src/dao/Proposals.sol#L83-L83
+
+```
+require( block.timestamp >= firstPossibleProposalTimestamp, "Cannot propose ballots within the first 45 days of deployment" );
+```
+https://github.com//code-423n4/2024-01-salty/blob/main/src/dao/Proposals.sol#L102-L102
+```
+require( openBallotsByName[ballotName] == 0, "Cannot create a proposal similar to a ballot that is still open" );
+```
+## ++i costs less gas than i++, especially when it's used in for-loops (--i/i-- too)
+
+https://github.com//code-423n4/2024-01-salty/blob/main/src/rewards/SaltRewards.sol#L87-L87
+```
+for( uint256 i = 0; i < addedRewards.length; i++ )
+```
+https://github.com//code-423n4/2024-01-salty/blob/main/src/rewards/SaltRewards.sol#L129-L129
+```
+for( uint256 i = 0; i < poolIDs.length; i++ )
+```
