@@ -128,3 +128,28 @@ https://github.com//code-423n4/2024-01-salty/blob/main/src/rewards/SaltRewards.s
 ```
 for( uint256 i = 0; i < poolIDs.length; i++ )
 ```
+## VARIABLES DECLARED BUT NEVER USED
+The contract PoolUtils has declared a variable STAKED_SALT but it is not used anywhere in the code. This represents dead code or missing logic.
+
+Unused variables increase the contract's size and complexity, potentially leading to higher gas costs and a larger attack surface.
+https://github.com//code-423n4/2024-01-salty/blob/main/src/pools/PoolUtils.sol#L16-L16
+```
+bytes32 constant public STAKED_SALT = bytes32(0);
+```
+## UNUSED IMPORTS
+https://github.com//code-423n4/2024-01-salty/blob/main/src/dao/Proposals.sol#L14-L14
+```
+import "./interfaces/IDAO.sol";
+```
+https://github.com//code-423n4/2024-01-salty/blob/main/src/dao/DAO.sol#L11-L11
+```
+import "../staking/interfaces/IStaking.sol";
+```
+https://github.com//code-423n4/2024-01-salty/blob/main/src/dao/DAO.sol#L18-L18
+```
+import "../Upkeep.sol";
+```
+https://github.com//code-423n4/2024-01-salty/blob/main/src/dao/interfaces/IDAO.sol#L4-L4
+```
+import "../../rewards/interfaces/ISaltRewards.sol";
+```
