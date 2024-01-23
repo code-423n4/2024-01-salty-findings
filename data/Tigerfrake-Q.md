@@ -124,3 +124,29 @@ https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fprice_feed%2FPriceAg
 ### Recommendation:
 When dividing an amount by two, consider taking the first amount as the division result by
 two, and the second one to be the total amount minus the first one.
+
+# [11] Integer casting overflow
+
+### Description:
+`Solidity >0.8` handles the integer `overflow/underflow` during arithmetic operations. But in case of `casting`, the transaction doesn't `revert` and value overflows.
+
+### Exploiting scenario
+In the `claimAllRewards()` function, there's potential issue, but the probability of exploiting is very low when token uses standard decimals and proper total supply. 
+However I have to point out this as a warning.
+
+On line 159 if the `(uint256 pendingRewards)` would be higher than `uint128.max`, then the result can overflow and cause mismatch. 
+
+https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fstaking%2FStakingRewards.sol#L159
+
+```Solidity
+                        userInfo[poolID].virtualRewards += uint128(pendingRewards);
+```
+And then in line 161, `claimableRewards` is updated with the original `uint256 pendingRewards` which could be higher than the overflow result above.
+
+ https://github.com/code-423n4/2024-01-salty/blob/main/src%2Fstaking%2FStakingRewards.sol#L161
+```Solidity
+claimableRewards += pendingRewards;
+```
+
+### Recommendation
+Be aware of `integer casting overflow` and if this edge case is possible, add the `require statement` to avoid it definitely.
