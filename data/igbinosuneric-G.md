@@ -136,20 +136,27 @@ https://github.com//code-423n4/2024-01-salty/blob/main/src/pools/PoolUtils.sol#L
 ```
 bytes32 constant public STAKED_SALT = bytes32(0);
 ```
-## UNUSED IMPORTS
-https://github.com//code-423n4/2024-01-salty/blob/main/src/dao/Proposals.sol#L14-L14
+## STORAGE VARIABLE CACHING IN MEMORY
+The contract RewardsConfig is using the state variable stakingRewardsPercent multiple times in the function changeStakingRewardsPercent.
+
+SLOADs are expensive (100 gas after the 1st one) compared to MLOAD/MSTORE (3 gas each).
+
+https://github.com//code-423n4/2024-01-salty/blob/main/src/rewards/RewardsConfig.sol#L27-L27
 ```
-import "./interfaces/IDAO.sol";
+uint256 public stakingRewardsPercent = 50;
 ```
-https://github.com//code-423n4/2024-01-salty/blob/main/src/dao/DAO.sol#L11-L11
+The contract RewardsConfig is using the state variable percentRewardsSaltUSDS multiple times in the function changePercentRewardsSaltUSDS.
+
+SLOADs are expensive (100 gas after the 1st one) compared to MLOAD/MSTORE (3 gas each).
+https://github.com//code-423n4/2024-01-salty/blob/main/src/rewards/RewardsConfig.sol#L33-L33
 ```
-import "../staking/interfaces/IStaking.sol";
+ uint256 public percentRewardsSaltUSDS = 10;
 ```
-https://github.com//code-423n4/2024-01-salty/blob/main/src/dao/DAO.sol#L18-L18
+The contract DAOConfig is using the state variable bootstrappingRewards multiple times in the function changeBootstrappingRewards.
+
+SLOADs are expensive (100 gas after the 1st one) compared to MLOAD/MSTORE (3 gas each).
+https://github.com//code-423n4/2024-01-salty/blob/main/src/dao/DAOConfig.sol#L24-L24
 ```
-import "../Upkeep.sol";
+uint256 public bootstrappingRewards = 200000 ether;
 ```
-https://github.com//code-423n4/2024-01-salty/blob/main/src/dao/interfaces/IDAO.sol#L4-L4
-```
-import "../../rewards/interfaces/ISaltRewards.sol";
-```
+
