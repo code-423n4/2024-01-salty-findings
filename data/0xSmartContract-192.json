@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xSmartContract",
+  "risk": "2",
+  "title": "Potential for Blocking State Changes in `ManagedWallet.sol`",
+  "issueId": 192,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/192"
+}
