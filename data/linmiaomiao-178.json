@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "linmiaomiao",
+  "risk": "3",
+  "title": "SetContractAddress proposal is vulnerable to a denial-of-service attack,preventing any future changes to the price feed and accessManager addresses",
+  "issueId": 178,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/178"
+}
