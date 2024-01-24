@@ -116,3 +116,37 @@ function withdraw(uint256 amount) external onlyOwner {
 =======
 =======
 
+2. LOW: `ArbitrageSearch::_rightMoreProfitable()` - L68: potential rounding down to zero risk in `uint256 amountOut = (reservesA1 * midpoint) / (reservesA0 + midpoint);`
+
+Chances of this happening is small, but not impossible, should be some extreme market or other external event which causes the initial reserves of 1000 to drop to updated reserves of 20, and with midpoint of 50 would cause `amountOut` to be rounded down to zero, effectively causing user to lose their funds during the swap/trade.
+
+IMPACT:
+
+- high, user will lose their funds used in the swap/trade
+- chance of happening pretty low, due to extreme conditions/manipulation required. flashloan maybe?
+
+PoC:
+
+```solidity
+uint256 amountOut = (reservesA1 * midpoint) / (reservesA0 + midpoint);
+```
+For rounding down to zero we need the following condition to be true:
+`reservesA1 * midpoint < reservesA0 + midpoint`
+So:
+= `reservesA1 < (reservesA0 + midpoint) / midpoint`
+= `reservesA1 < (reservesA0 / midpoint) + 1`
+
+Then when we apply this specific example:
+`reservesA0 = 1000`, `reservesA1 = 20`, and `midpoint = 50`, the condition for rounding down to zero is met. However, such extreme reductions in reserves from 1000 to 20 are unrealistic in typical AMM scenarios and may indicate abnormal behavior, a potential issue, or an attack on the system.
+
+Completing the above equation:
+= `20 < 21`
+So if we go back to the original equation for `amountOut`:
+`amountOut = (reservesA1 * midpoint) / (reservesA0 + midpoint)`
+= `(20 * 50) / (1000 + 50)`
+= `0.952380952381`
+which will be rounded down to:
+= `0`
+
+=======
+=======
