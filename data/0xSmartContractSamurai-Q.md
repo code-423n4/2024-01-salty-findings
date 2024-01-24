@@ -150,3 +150,23 @@ which will be rounded down to:
 
 =======
 =======
+
+3. `SigningTools::_verifySignature()` - L26: Recommend to use OpenZeppelin's latest ECDSA over `ecrecover()` to enhance signature security and mitigate malleability risks.
+
+https://github.com/code-423n4/2024-01-salty/blob/ce719503b43ebf086f5147c0f6efc3c0890bf0f9/src/SigningTools.sol#L26
+
+(Although it may not pose any risk for this specific implementation due to the fact that the signature is expected to be reused, the recommendation remains valid.)
+
+L26:
+```solidity
+address recoveredAddress = ecrecover(messageHash, v, r, s);
+```
+
+RECOMMENDATION:
+
+When it comes to smart contract signatures, consider swapping out `ecrecover()` for OpenZeppelin's ECDSA. Why? Well, certain signature schemes, like ECDSA, can get tricky with signature malleability, allowing the creation of distinct valid signatures for the same message and private key. OpenZeppelin's ECDSA library steps in as an advanced alternative, reducing the risk of encountering multiple valid signatures tied to a single message and key. In a nutshell, making this switch enhances signature security in smart contracts by addressing malleability challenges.
+
+It's noteworthy that the missing check for a returned `address(0)` is not considered a concern, given the subsequent boolean "check" on L28 that effectively covers this scenario.
+
+=======
+=======
