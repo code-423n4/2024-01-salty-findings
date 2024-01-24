@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Daniel526",
+  "risk": "2",
+  "title": "BootstrapBallot contract does not ensure that it's the only contract that can call the Airdrop.authorizeWallet function",
+  "issueId": 177,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/177"
+}
