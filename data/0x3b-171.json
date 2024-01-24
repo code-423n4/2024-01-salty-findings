@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0x3b",
+  "risk": "2",
+  "title": "Liquidators are forced to endure a cooldown after liquidating a user, slowing down liqudations and potentially leading to bad debt.",
+  "issueId": 171,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/171"
+}
