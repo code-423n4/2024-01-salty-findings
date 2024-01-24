@@ -69,7 +69,6 @@
     - [3.6. Use of Third-Party Libraries - Ecrecover](#use-of-third-party-libraries-ecrecover)
     - [3.7. Testing Functions with Complex Logic](#testing-functions-with-complex-logic)
     - [3.8.Monitor Critical Contract Transactions](#monitor-critical-contract-transactions)
-    - [3.9.Deploy and Test the Protocol on the Sepolia Test Network](#deploy-and-test-the-protocol-on-the-sepolia-test-network)
 
 - [4. Centralization Risks](#4-centralization-risks)
 
@@ -1920,14 +1919,6 @@ Transaction monitoring can also be combined with a security tool like "OpenZeppe
 * Hal Notify: https://www.hal.xyz/products/hal-notify 
 * OpenZeppelin Defender: https://www.openzeppelin.com/defender 
 
-
-<a id="deploy-and-test-the-protocol-on-the-sepolia-test-network"></a>
-## 3.9. Deploy and Test the Protocol on the Sepolia Test Network
-
-A local deployment is not the same as a deployment to a proper blockchain. Even if all contracts were thoroughly tested locally, there may still be some strange edge cases that only become apparent once the protocol has been deployed to a live network. Therefore, it is important to deploy and test all contracts on a test network, before going live on the mainnet.
-
-As the target chain for the protocol is the Ethereum mainnet, I recommend to do a prior deployment/test phase on the Sepolia network. 
- 
 
 <a id="4-centralization-risks"></a>
 # 4. Centralization Risks
