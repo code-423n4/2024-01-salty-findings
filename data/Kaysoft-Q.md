@@ -1,6 +1,7 @@
 ## [L-1] The Ownable library is unnecessary on the `USDS.sol` contract.
-There is 1 instance of this
+There are 2 instance of this
 - https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/stable/USDS.sol#L14
+- https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/stable/Liquidizer.sol#L21
 
 The `onlyOwner` modifier of the `ownable` contract was used only once in the  function that is to be executed only once at deployment, then ownership is renounced in the same function. 
 
@@ -17,6 +18,10 @@ File: src/stable/USDS.sol
 33:		renounceOwnership();//@audit ownable is unnecessary.
 34:		}
 ```
+
+The same applies to the `Liquizer.sol` contract and the `Liquidizer.sol#setContracts(...)` function.
+- https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/stable/Liquidizer.sol#L21
+
 
 Impact:
 Adds more unnecessary codes that comes with the `Ownable` contract to the `USDC.sol` contract increasing complexity and deployment gas cost.
