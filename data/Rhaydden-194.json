@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Rhaydden",
+  "risk": "3",
+  "title": "Potential Denial of Service Attack in the `proposeTokenWhitelisting` function in Proposals.sol",
+  "issueId": 194,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/194"
+}
