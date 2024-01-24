@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "linmiaomiao",
+  "risk": "2",
+  "title": "calculateArbitrageProfits give wrong profit if indicies.index is INVALID_POOL_ID",
+  "issueId": 183,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/183"
+}
