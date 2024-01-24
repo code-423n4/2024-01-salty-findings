@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0x3b",
+  "risk": "3",
+  "title": "Liquidations and the burning of collateral occur at different times, which can lead to discrepancies between the two values",
+  "issueId": 173,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/173"
+}
