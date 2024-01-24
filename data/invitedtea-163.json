@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "invitedtea",
+  "risk": "2",
+  "title": "SALT balance is burned without accounting for potential liquidation needs",
+  "issueId": 163,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/163"
+}
