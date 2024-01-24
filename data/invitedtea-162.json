@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "invitedtea",
+  "risk": "2",
+  "title": "Potential liquidity issues with PERCENT_POL_TO_WITHDRAW",
+  "issueId": 162,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/162"
+}
