@@ -7,57 +7,57 @@
     
 - [2. Analysis of the Protocol Components and Smart Contracts](#2-analysis-of-the-protocol-components-and-smart-contracts)
     - [2.1. The DAO](#2-1-the-dao)
-    - [2.1.1. DAO.sol](#2-1-1-dao-sol)
-    - [2.1.2. Proposals.sol](#2-1-2-proposals-sol)
-    - [2.1.3. DAOConfig.sol](#2-1-3-daoconfig-sol)
-    - [2.1.4. Parameters.sol](#2-1-4-parameters-sol)
-    - [2.1.5. Principal Actors of the DAO](#2-1-5-principal-actors-of-the-dao)
+      - [2.1.1. DAO.sol](#2-1-1-dao-sol)
+      - [2.1.2. Proposals.sol](#2-1-2-proposals-sol)
+      - [2.1.3. DAOConfig.sol](#2-1-3-daoconfig-sol)
+      - [2.1.4. Parameters.sol](#2-1-4-parameters-sol)
+      - [2.1.5. Principal Actors of the DAO](#2-1-5-principal-actors-of-the-dao)
 
     - [2.2. Pools](#2-2-pools)
-    - [2.2.1. Pools.sol](#2-2-1-pools-sol)
-    - [2.2.2. ArbitrageSearch.sol](#2-2-2-arbitragesearch-sol)
-    - [2.2.3. PoolsConfig.sol](#2-2-3-poolsconfig-sol)
-    - [2.2.4. PoolStats.sol](#2-2-4-poolstats-sol)
-    - [2.2.5. PoolUtils.sol and PoolMath.sol](#2-2-5-poolutils-sol-and-poolmath-sol)
-    - [2.2.6. Principal Actors of the Pool](#2-2-6-principal-actors-of-the-pool)
+      - [2.2.1. Pools.sol](#2-2-1-pools-sol)
+      - [2.2.2. ArbitrageSearch.sol](#2-2-2-arbitragesearch-sol)
+      - [2.2.3. PoolsConfig.sol](#2-2-3-poolsconfig-sol)
+      - [2.2.4. PoolStats.sol](#2-2-4-poolstats-sol)
+      - [2.2.5. PoolUtils.sol and PoolMath.sol](#2-2-5-poolutils-sol-and-poolmath-sol)
+      - [2.2.6. Principal Actors of the Pool](#2-2-6-principal-actors-of-the-pool)
     
     - [2.3. Price Feeds](#2-3-price-feeds)
-    - [2.3.1. PriceAggregator.sol](#2-3-1-priceaggregator-sol)
-    - [2.3.2. CoreChainlinkFeed.sol](#2-3-2-corechainlinkfeed-sol)
-    - [2.3.3. CoreUniswapFeed.sol](#2-3-3-coreuniswapfeed-sol)
-    - [2.3.4. CoreSaltyFeed.sol ](#2-3-4-coresaltyfeed-sol-)
+      - [2.3.1. PriceAggregator.sol](#2-3-1-priceaggregator-sol)
+      - [2.3.2. CoreChainlinkFeed.sol](#2-3-2-corechainlinkfeed-sol)
+      - [2.3.3. CoreUniswapFeed.sol](#2-3-3-coreuniswapfeed-sol)
+      - [2.3.4. CoreSaltyFeed.sol ](#2-3-4-coresaltyfeed-sol-)
     
     - [2.4. Stablecoin - Lending/Borrowing](#2-4-stablecoin-lending-borrowing)
-    - [2.4.1. USDS.sol](#2-4-1-usds-sol)
-    - [2.4.2. StakingRewards.sol](#2-4-2-stakingrewards-sol)
-    - [2.4.3. Liquidity.sol](#2-4-3-liquidity-sol)
-    - [2.4.4. CollateralAndLiquidity.sol](#2-4-4-collateralandliquidity-sol)
-    - [2.4.5. Liquidizer.sol](#2-4-5-liquidizer-sol)
-    - [2.4.6. StableConfig.sol](#example)
-    - [2.4.7. Principal Actors of the Stable Module](#2-4-7-principal-actors-of-the-stable-module)
+      - [2.4.1. USDS.sol](#2-4-1-usds-sol)
+      - [2.4.2. StakingRewards.sol](#2-4-2-stakingrewards-sol)
+      - [2.4.3. Liquidity.sol](#2-4-3-liquidity-sol)
+      - [2.4.4. CollateralAndLiquidity.sol](#2-4-4-collateralandliquidity-sol)
+      - [2.4.5. Liquidizer.sol](#2-4-5-liquidizer-sol)
+      - [2.4.6. StableConfig.sol](#example)
+      - [2.4.7. Principal Actors of the Stable Module](#2-4-7-principal-actors-of-the-stable-module)
     
     - [2.5. Staking](#2-5-staking)
-    - [2.5.1. Staking.sol](#2-5-1-staking-sol)
-    - [2.5.2. StakingConfig.sol](#2-5-2-stakingconfig-sol)
-    - [2.5.3. Principal Actors of the Staking Module](#2-5-3-principal-actors-of-the-staking-module)
+      - [2.5.1. Staking.sol](#2-5-1-staking-sol)
+      - [2.5.2. StakingConfig.sol](#2-5-2-stakingconfig-sol)
+      - [2.5.3. Principal Actors of the Staking Module](#2-5-3-principal-actors-of-the-staking-module)
     
     - [2.6. Rewards](#2-6-rewards)
-    - [2.6.1. RewardsEmitter.sol](#2-6-1-rewardsemitter-sol)
-    - [2.6.2. Emissions.sol](#2-6-2-emissions-sol)
-    - [2.6.3. SaltRewards.sol](#2-6-3-saltrewards-sol)
-    - [2.6.4. RewardsConfig.sol](#2-6-4-rewardsconfig-sol)
-    - [2.6.5. Principal Actors of the Rewards Module](#2-6-5-principal-actors-of-the-rewards-module)
+      - [2.6.1. RewardsEmitter.sol](#2-6-1-rewardsemitter-sol)
+      - [2.6.2. Emissions.sol](#2-6-2-emissions-sol)
+      - [2.6.3. SaltRewards.sol](#2-6-3-saltrewards-sol)
+      - [2.6.4. RewardsConfig.sol](#2-6-4-rewardsconfig-sol)
+      - [2.6.5. Principal Actors of the Rewards Module](#2-6-5-principal-actors-of-the-rewards-module)
     
     - [2.7. Exchange Launch](#2-7-exchange-launch)
-    - [2.7.1. BootstrapBallot.sol](#2-7-1-bootstrapballot-sol)
-    - [2.7.2. InitialDistribution.sol](#2-7-2-initialdistribution-sol)
-    - [2.7.3. Airdrop.sol](#2-7-3-airdrop-sol)
-    - [2.7.4. ManagedWallet.sol](#2-7-4-managedwallet-sol)
-    - [2.7.5. AccessManager.sol](#2-7-5-accessmanager-sol)
-    - [2.7.6. SigningTools.sol](#2-7-6-signingtools-sol)
-    - [2.7.7. ExchangeConfig.sol](#2-7-7-exchangeconfig-sol)
-    - [2.7.8. Upkeep.sol](#2-7-8-upkeep-sol)
-    - [2.7.9. Principal Actors of the Launch Module](#2-7-9-principal-actors-of-the-launch-module)
+      - [2.7.1. BootstrapBallot.sol](#2-7-1-bootstrapballot-sol)
+      - [2.7.2. InitialDistribution.sol](#2-7-2-initialdistribution-sol)
+      - [2.7.3. Airdrop.sol](#2-7-3-airdrop-sol)
+      - [2.7.4. ManagedWallet.sol](#2-7-4-managedwallet-sol)
+      - [2.7.5. AccessManager.sol](#2-7-5-accessmanager-sol)
+      - [2.7.6. SigningTools.sol](#2-7-6-signingtools-sol)
+      - [2.7.7. ExchangeConfig.sol](#2-7-7-exchangeconfig-sol)
+      - [2.7.8. Upkeep.sol](#2-7-8-upkeep-sol)
+      - [2.7.9. Principal Actors of the Launch Module](#2-7-9-principal-actors-of-the-launch-module)
 
 - [3. Systemic and Technical Risks](#3-systemic-and-technical-risks)
 
@@ -103,12 +103,12 @@ Users can stake protocol/governance SALT tokens in order to participate in the g
 
 **Overcollateralized Stablecoin USDS:**
 
-Not many DEXes provide their own stablecoin. The peg is assured by using various measures, like having a high initial overcollateralization rate in the form of WBTC/WETH tokens for users who want to borrow USDS. Also, the protocol owned liquidity pools can provide additional USDS tokens to be burned in the case of under collateralized liquidations of USDS borrowers.
+Not many DEXs provide their own stablecoin, so, this is definitely an interesting approach... The peg is assured by using various measures, like having a high initial overcollateralization rate in the form of WBTC/WETH tokens for users who want to borrow USDS. Also, the protocol owned liquidity pools can provide additional USDS tokens to be burned in the case of undercollateralized liquidations of USDS borrowers.
 
 
 **Protection against oracle price failure:**
 
-It is also great to see that the protocol does not rely only on one single price feed, but uses three different feeds to provide most accurate prices for BTC and ETH and to protect the protocol against a fatal failure from one of those price feeds.
+It is also great to see that the protocol does not rely on only one single price feed, but uses three different feeds to provide most accurate prices for BTC and ETH and to protect the protocol against a fatal failure from one of those price feeds.
 
 <a id="1-1-key-features-of-the-dex"></a>
 ## 1.1. Key Features of the DEX
@@ -129,7 +129,7 @@ It is also great to see that the protocol does not rely only on one single price
 <a id="1-2-the-core-modules-and-main-actors-of-the-salty-io-protocol"></a>
 ## 1.2. The Core Modules and Main Actors of the Salty.IO Protocol
 
-The Salty.IO protocol consists of 7 key modules or components that provide the various features of the DEX. Those modules correspond more or less with the main folders in the code repository. There are just a few minor modifications that are detailed in the sections below that proved detailed information about each component and their associated contracts.
+The Salty.IO protocol consists of 7 key modules or components that provide the various features of the DEX. Those modules correspond more or less with the main folders in the code repository. There are just a few minor modifications that are detailed in the sections below that provide detailed information about each component and their associated contracts.
 
 **Here is a list of all protocol modules:**
 
@@ -1801,7 +1801,7 @@ The DAO is the owner of the ExchangeConfig and the only contract allowed to exec
 <a id="3-systemic-and-technical-risks"></a>
 # 3. Systemic and Technical Risks
 
-Due to the measures taken by the protocol team, most of the typical risk factors for decentralized blockchain projects have already been addressed and there are not really any serious issues that still need to be handled or corrected.
+Due to the measures taken by the protocol team, most of the typical risk factors for decentralized blockchain projects have already been addressed and in terms of the protocol architecture there are not really any serious issues that still need to be handled or corrected.
 
 **Here are just a few ideas that could provide some additional minor improvements for the protocol:**  
 
@@ -1819,7 +1819,7 @@ Potentially, under those extreme circumstances, calling the performUpkeep functi
 
 **Possible solutions:**
 
-To mitigate those issues, the team could think about adding secondary upkeep functions to the Upkeep contract that deal only with the bare essentials. A custom logic upkeep could then be registered with Chainlink that regularly check a "checkUpkeep" function and that executes the secondary performUpkeep function only during those times of high stress and when certain conditions are met (like for example, the gas price rises above a certain limit). 
+To mitigate those issues, the team could think about adding secondary upkeep functions to the Upkeep contract that deal only with the bare essentials. A custom logic upkeep could then be registered with Chainlink that regularly checks a "checkUpkeep" function and that executes the secondary performUpkeep function only during those times of high stress and when certain conditions are met (like for example, the gas price rises above a certain limit). 
 
 An additional custom logic upkeep should also be registered with Chainlink for the liquidateUser function in the CollateralAndLiquidity contract. Again, if certain conditions are met (like sharp price drops, rising gas prices...) this upkeep should be called more frequently in order to prevent fund losses from undercollateralized positions that are not liquidated in time.
 
@@ -1850,11 +1850,11 @@ Currently, there is no possibility to pause crucial functionalities, like fund w
 
 It is possible to either give certain trusted parties the ability to trigger such a circuit breaker or to add programmatic rules that automatically trigger one or more specific circuit breakers for critical protocol features when certain conditions are met.
 
-A slightly softer approach would be to limit the amount a user can withdraw within a specific period of time if the protocol is under attack or other extreme circumstances are occurring.
+A slightly softer approach would be for example to limit the amount a user can withdraw within a specific period of time if the protocol is under attack or other extreme circumstances are occurring.
 
-If there is a need to pause crucial protocol features, the team needs to act immediately, which means, this can't be implemented via the DAO governance process. Core tem members who are entrusted with the key to a multisig wallet would need to enforce such an action;
+If there is a need to pause crucial protocol features, the team needs to act immediately, which means, this can't be implemented via the DAO governance process. Core team members who are entrusted with the key to a multisig wallet would need to enforce such an action.
 
-This, of course goes against the thought of protocol decentralization and certain potential clients may not feel comfortable in using such a protocol.
+This, of course goes against the idea of protocol decentralization and potential clients may not feel comfortable in using such a protocol.
 
 So, there are advantages and disadvantages to both approaches. There is no perfect or single, right decision and the team carefully needs to look at both options and decide if a higher level of potential "disaster" prevention is more favorable than a most optimal level of system decentralization.
 
