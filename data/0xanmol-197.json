@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xanmol",
+  "risk": "3",
+  "title": "Transaction to add liquidity can be frontrunned resulting in the loss for LP.",
+  "issueId": 197,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/197"
+}
