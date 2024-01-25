@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "holydevoti0n",
+  "risk": "2",
+  "title": "Protocol is not EIP712 compliant, leading to several issues",
+  "issueId": 207,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/207"
+}
