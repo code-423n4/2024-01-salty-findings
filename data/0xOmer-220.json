@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xOmer",
+  "risk": "3",
+  "title": "Rejecting logic not implemented correctly in ManagedWallet",
+  "issueId": 220,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/220"
+}
