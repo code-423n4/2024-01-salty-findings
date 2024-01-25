@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "iamandreiski",
+  "risk": "3",
+  "title": "Liquidations will always revert due to the cooldown period if the user-in-question deposits small amounts every hour or frontruns the liquidation transaction",
+  "issueId": 210,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/210"
+}
