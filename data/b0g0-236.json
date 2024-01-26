@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "b0g0",
+  "risk": "2",
+  "title": "Deposits that form protocol owned liquidity are not protected against sandwich attack",
+  "issueId": 236,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/236"
+}
