@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xAsen",
+  "risk": "2",
+  "title": "SALT emissions can't be fully emitted if performUpkeep() is called too often due to a precision loss",
+  "issueId": 252,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/252"
+}
