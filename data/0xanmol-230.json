@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xanmol",
+  "risk": "3",
+  "title": "Passing a value of 0 as `minAmountOut` during a swap to adjust liquidity in zapping could potentially lead to a sandwich attack.",
+  "issueId": 230,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/230"
+}
