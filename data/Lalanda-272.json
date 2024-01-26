@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Lalanda",
+  "risk": "2",
+  "title": "CoreChainlinkFeed uses BTC/USD chainlink oracle to price WBTC, and it does not handle a depeg event",
+  "issueId": 272,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/272"
+}
