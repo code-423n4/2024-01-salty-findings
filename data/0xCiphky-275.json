@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xCiphky",
+  "risk": "3",
+  "title": "Liquidations Blocked by Upkeep Timer When Decreasing Liquidated Users' Shares",
+  "issueId": 275,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/275"
+}
