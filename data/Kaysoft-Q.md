@@ -1,4 +1,4 @@
-## [L-1] Lack of deadline check on add and removing liquidity.
+## [L-1] Lack of `deadline` check on add and removing liquidity.
 There are 2 instances of this
 
 - https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/pools/Pools.sol#L140
@@ -28,8 +28,48 @@ However, the `ensureNotExpired` modifier is not added to the `addLiquidity(...)`
 Impact: `removeLiquidity` and `addLiquidity` transactions can be "saved for later" for as long as possible until it incurs enough loss based on slippage.
 
 Recommendation: add a `deadline` parameter and the `ensureNotExpired` modifier to the `addLiquidity(...)` and `removeLiquidity(...)` functions as it is done on the `swap(...)` function. 
+```
+function addLiquidity( ..., deadline) external nonReentrant ensureNotExpired(deadline) returns (uint256 addedAmountA, uint256 addedAmountB, uint256 addedLiquidity){
+...
+}
+```
 
-## [L-2] The Ownable library is unnecessary on the `USDS.sol` contract.
+
+## [L-2] Use the available `private` `visibility specifier` instead of creating the `onlySameContract` modifier
+
+There are 11 instances of this
+- https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/Upkeep.sol#L95C2-L112C58
+- https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/Upkeep.sol#L145C2-L231C43
+
+According the to Solidity docs:
+> private function: only visible in the current contract
+
+And here is the `onlySameContract` modifier:
+```
+File:Upkeep.sol
+modifier onlySameContract()
+		{
+    	require(msg.sender == address(this), "Only callable from within the same contract");
+    	_;
+		}
+```
+It is better to user the `private` keyword instead of creating and using a new modifier that achieves the same aim as the `private` visibility specifier.
+
+Impact: More unnecessary code when `private` can be used.
+
+Recommedation:
+Consider using `private` visibility specifier on functions `step1(...)` to `step11(...)`.
+```diff
+--     function step1() public onlySameContract
+++     function step1() private
+		{
+		collateralAndLiquidity.liquidizer().performUpkeep();
+		}
+```
+
+
+
+## [L-3] The Ownable library is unnecessary on the `USDS.sol` contract.
 There are 2 instance of this
 - https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/stable/USDS.sol#L14
 - https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/stable/Liquidizer.sol#L21
