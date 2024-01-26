@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xanmol",
+  "risk": "3",
+  "title": " Protocol Owned Liquidity will get withdrawn unnecessarily and could be drained.",
+  "issueId": 240,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/240"
+}
