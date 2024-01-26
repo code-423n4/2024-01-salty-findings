@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "xiao",
+  "risk": "2",
+  "title": "The parameter of the proposeCallContract function does not determine whether it is a contract address, causing dao.finalizeBallot to fail to execute.",
+  "issueId": 253,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/253"
+}
