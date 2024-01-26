@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "holydevoti0n",
+  "risk": "3",
+  "title": "Attackers can make liquidation revert and put protocol at risk due to bad debt",
+  "issueId": 248,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/248"
+}
