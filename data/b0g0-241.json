@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "b0g0",
+  "risk": "3",
+  "title": "DAO can be permanently blocked from updating priceFeed and AccessManager contracts",
+  "issueId": 241,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/241"
+}
