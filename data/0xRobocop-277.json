@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xRobocop",
+  "risk": "3",
+  "title": "User can prevent liquidation even if its position can still be liquidated",
+  "issueId": 277,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/277"
+}
