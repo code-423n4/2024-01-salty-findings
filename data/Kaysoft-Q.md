@@ -1,4 +1,35 @@
-## [L-1] The Ownable library is unnecessary on the `USDS.sol` contract.
+## [L-1] Lack of deadline check on add and removing liquidity.
+There are 2 instances of this
+
+- https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/pools/Pools.sol#L140
+- https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/pools/Pools.sol#L170
+
+The `ensureNotExpired` modifier is used on the `Pool.swap()` function but not used on the `addLiquidity(...)` and `removeLiquidity(...)` functions of Pool.sol
+
+The `ensureNotExpired` modifier is used to protect transactions from being kept by the miners till it is profitable for them before execution especially in unstable market swings.
+
+```
+File: Pool.sol
+modifier ensureNotExpired(uint deadline)
+		{
+		require(block.timestamp <= deadline, "TX EXPIRED");
+		_;
+		}
+```
+
+```
+File: Pool.sol
+function addLiquidity( ... ) external nonReentrant returns (uint256 addedAmountA, uint256 addedAmountB, uint256 addedLiquidity){
+...
+}
+```
+However, the `ensureNotExpired` modifier is not added to the `addLiquidity(...)` and `removeLiquidity(...)` functions.
+
+Impact: `removeLiquidity` and `addLiquidity` transactions can be "saved for later" for as long as possible until it incurs enough loss based on slippage.
+
+Recommendation: add a `deadline` parameter and the `ensureNotExpired` modifier to the `addLiquidity(...)` and `removeLiquidity(...)` functions as it is done on the `swap(...)` function. 
+
+## [L-2] The Ownable library is unnecessary on the `USDS.sol` contract.
 There are 2 instance of this
 - https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/stable/USDS.sol#L14
 - https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/stable/Liquidizer.sol#L21
@@ -37,5 +68,5 @@ constructor(ICollateralAndLiquidity _collateralAndLiquidity) ERC20( "USDS", "USD
 
 The above will remove the need for the `setCollateralAndLiquidity(...)` and the `Ownable` contract codes.
 
-## [L-2] 
+
 
