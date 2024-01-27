@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Tigerfrake",
+  "risk": "3",
+  "title": "Incorrect Solidity version in FullMath.sol can result in wrong BTC/ETH prices being returned in CoreUniswapFeed",
+  "issueId": 329,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/329"
+}
