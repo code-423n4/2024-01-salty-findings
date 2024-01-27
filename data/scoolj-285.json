@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "scoolj",
+  "risk": "2",
+  "title": "No checks for non-zero output address when using ecrecover()",
+  "issueId": 285,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/285"
+}
