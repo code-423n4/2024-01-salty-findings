@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xbepresent",
+  "risk": "3",
+  "title": "User can evade `liquidation` by depositing the minimum of tokens and gain time to not be liquidated",
+  "issueId": 312,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/312"
+}
