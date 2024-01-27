@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "miaowu",
+  "risk": "3",
+  "title": "Part of the balance is lost due to solidity rounding down.",
+  "issueId": 309,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/309"
+}
