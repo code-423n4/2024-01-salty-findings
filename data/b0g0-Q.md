@@ -1,6 +1,8 @@
 ## [L-01] Signature verification function does not prevent signature malleability
 
 ## Issue Description
+https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/SigningTools.sol#L11
+
 A common attack vector when it comes to using signatures it their malleability. In simple terms this allows an already used signature to be modified without changing it's signed data and reusing it a second time ([article](https://medium.com/draftkings-engineering/signature-malleability-7a804429b14a)). The way to prevent this is to check that s value of the signature is in the lower half order, and the v value to be either 27 or 28. However the `_verifySignature` inside `SigningTools.sol` library doesn't do this and allows such forged signatures to be accepted. This is used during voting to start the exchange and could lead to double votes
 
 ```
@@ -30,6 +32,17 @@ function _verifySignature(
 
 ## Recommended Mitigation Steps
 Consider using OpenZeppelin ECDSA library (which handles this) instead of implementing it yourself -> https://docs.openzeppelin.com/contracts/2.x/api/cryptography#ECDSA-recover-bytes32-bytes-
+
+## [L-01] BoostrapBallot does not use `deadline` in the signature when verifying  votes in the `vote()` method
+
+https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/launch/BootstrapBallot.sol#L48
+
+## Issue Description
+Using deadlines is a standard security measure when creating and verifying signatures. It ensures that generated signatures cannot be saved(or stolen) to be used at some later date than it was originally intended and possible gain some advantages from it.
+
+
+## Recommended Mitigation Steps
+Consider including a deadline when generating the signature off-chain and provide it as a parameter to `vote()` so that it can be verified that it is not expired. This will provide additional line of defence against malicious uses of signatures
 
 ## [L-02] If exchange start is not approved after the Boostrap Ballot has completed it will never be launched
 
@@ -76,4 +89,37 @@ Consider using the following check to prevent long description:
 require(bytes(description).length <= someReasonableLength,"description too long")
 ```
 
- 
+## [L-04] Discrepancy between documented functionality and implementation when creating `SendSalt` proposals
+
+## Issue Description
+https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/dao/Proposals.sol#L205-L208
+
+According to the description in `proposeSendSALT()` function only a single active ballot for sending Salt tokens from the DAO can exists at a time. The description  above `_possiblyCreateProposal()` says that if more than one wallet should be specified to receive the SALT tokens a splitter can be used. However nowhere in the contract exist a logic that can handle more than one recipient for a `SendSalt` proposal.
+
+```solidity
+ function proposeSendSALT(
+        address wallet,
+        uint256 amount,
+        string calldata description
+    ) external nonReentrant returns (uint256 ballotID) {
+        ....
+
+        // This ballotName is not unique for the receiving wallet and enforces the restriction of one sendSALT ballot at a time.
+        // If more receivers are necessary at once, a splitter can be used.
+        //@audit [L] -> no splitter is set
+        string memory ballotName = "sendSALT";
+        return
+            _possiblyCreateProposal(
+                ballotName,
+                BallotType.SEND_SALT,
+                wallet,
+                amount,
+                "",
+                description
+            );
+    }
+```
+
+## Issue Description
+
+If the protocol should be able to handle multiple SALT receivers then some string parsing logic should be implemented inside  the above function to extract the address from a string (e.g "address,address,address") or the address parameter should be an array
