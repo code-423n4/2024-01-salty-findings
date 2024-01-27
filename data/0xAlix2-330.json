@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xAlix2",
+  "risk": "2",
+  "title": "Invalid reserve 1 check in removeLiquidity functions",
+  "issueId": 330,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/330"
+}
