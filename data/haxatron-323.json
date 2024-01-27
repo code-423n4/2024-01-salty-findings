@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "haxatron",
+  "risk": "2",
+  "title": "If callFromDAO always fails, user cannot submit anymore proposals",
+  "issueId": 323,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/323"
+}
