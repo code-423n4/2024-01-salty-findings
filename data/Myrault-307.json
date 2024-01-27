@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Myrault",
+  "risk": "3",
+  "title": "In Airdrop.sol, saltAmountForEachUser is obtained by integer division and then rounded down. As a result, some tokens are locked in Airdrop.sol and cannot be taken out.",
+  "issueId": 307,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/307"
+}
