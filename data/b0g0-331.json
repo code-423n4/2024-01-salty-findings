@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "b0g0",
+  "risk": "2",
+  "title": "Chainlink oracle will return the wrong price for asset if underlying aggregator hits minAnswer",
+  "issueId": 331,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/331"
+}
