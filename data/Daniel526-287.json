@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Daniel526",
+  "risk": "2",
+  "title": "Incorrect Chainlink Price Conversion in latestChainlinkPrice Function",
+  "issueId": 287,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/287"
+}
