@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Daniel526",
+  "risk": "2",
+  "title": "Pending Staking Rewards Not Explicitly Reset in _sendStakingRewards Function",
+  "issueId": 306,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/306"
+}
