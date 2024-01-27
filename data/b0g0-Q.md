@@ -123,3 +123,32 @@ According to the description in `proposeSendSALT()` function only a single activ
 ## Issue Description
 
 If the protocol should be able to handle multiple SALT receivers then some string parsing logic should be implemented inside  the above function to extract the address from a string (e.g "address,address,address") or the address parameter should be an array
+
+## [L-06] No check if provided `swapAmountIn` is 0 inside `Pools.swap()`
+
+## Issue Description
+https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/pools/Pools.sol#L366
+
+Inside the swap function no check is made if the provided swap token amount is 0. This would cause useless calculations to be made and gas to be wasted.
+
+## Issue Description
+Add a validation if `swapAmountIn` parameters is not 0
+
+## [L-07] No check if provided `token` is wbtc/weth inside `Proposals.proposeTokenWhitelisting()`
+
+## Issue Description
+https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/dao/Proposals.sol#L162
+
+Inside the function for proposing a new token whitelisting no validation is made if provided token is `wbtc` or `weth`. Every token in the protocol is pooled with both `weth` and `wbtc` so there is no point in creating pools paired with the same token `weth/weth` or `wbtc/wbtc`. 
+
+## Issue Description
+Consider adding the following validation inside `proposeTokenWhitelisting()`:
+
+```solidity
+
+ require(address(token) != exchangeConfig.wbtc(), "token cannot be wbtc");
+ require(address(token) != exchangeConfig.weth(), "token cannot be weth");
+
+```
+
+This will prevent the creation of invalid pools with the same token
