@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xbepresent",
+  "risk": "2",
+  "title": "Restriction on multiple collateral deposits in a short period of time poses liquidation risk on `CollateralAndLiquidity.sol`",
+  "issueId": 316,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/316"
+}
