@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "PENGUN",
+  "risk": "3",
+  "title": "A malicious proposal can be created to prevent a setContract.",
+  "issueId": 390,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/390"
+}
