@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Myrault",
+  "risk": "3",
+  "title": "Using the wrong price calculation formula can lead to flash loan attacks",
+  "issueId": 358,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/358"
+}
