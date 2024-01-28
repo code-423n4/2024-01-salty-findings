@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "LeoGold",
+  "risk": "3",
+  "title": "Double Burning of Repaid amount when user repay their borrowed USDS in collateralAndLiquidity.sol::repayUSDS()",
+  "issueId": 355,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/355"
+}
