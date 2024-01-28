@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Ephraim",
+  "risk": "2",
+  "title": "Inability for the mainWallet to Propose Main and Confirmation Wallets in the Future when Confirmation Wallets Rejects any Wallet Proposal at any Point",
+  "issueId": 407,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/407"
+}
