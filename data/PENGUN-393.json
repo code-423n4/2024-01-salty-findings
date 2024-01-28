@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "PENGUN",
+  "risk": "3",
+  "title": "A malicious proposal can be created via frontrun to prevent normal proposals.",
+  "issueId": 393,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/393"
+}
