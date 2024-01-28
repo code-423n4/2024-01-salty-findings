@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "santiellena",
+  "risk": "2",
+  "title": "[M-2] Rounding down of `virtualRewardsToRemove` might influence calculations and let users claim rewards not considering user `virtualRewards`",
+  "issueId": 386,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/386"
+}
