@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Auditwolf",
+  "risk": "3",
+  "title": "Users can be unfairly liquidated the moment the DAO increases the minimum collateral ratio percent.",
+  "issueId": 357,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/357"
+}
