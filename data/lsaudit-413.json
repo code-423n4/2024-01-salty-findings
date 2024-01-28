@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "lsaudit",
+  "risk": "2",
+  "title": "`BootstrapBallot.sol` does not implement any quorum verification",
+  "issueId": 413,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/413"
+}
