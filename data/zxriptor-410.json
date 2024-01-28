@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "zxriptor",
+  "risk": "2",
+  "title": "Main wallet cannot propose wallets again after confirmation wallet rejected proposal",
+  "issueId": 410,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/410"
+}
