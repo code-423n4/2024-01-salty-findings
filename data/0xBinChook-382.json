@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xBinChook",
+  "risk": "2",
+  "title": "Unstaking reduced the required quorum, allowing manipulation by temporary unstaking",
+  "issueId": 382,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/382"
+}
