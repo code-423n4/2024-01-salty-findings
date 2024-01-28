@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "twcctop",
+  "risk": "2",
+  "title": " `virtualRewards` is not accounted when existingTotalShares is 0 ",
+  "issueId": 370,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/370"
+}
