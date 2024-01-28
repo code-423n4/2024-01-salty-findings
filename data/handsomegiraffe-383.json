@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "handsomegiraffe",
+  "risk": "2",
+  "title": "Caller of Upkeep may skip step 11 to save gas",
+  "issueId": 383,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/383"
+}
