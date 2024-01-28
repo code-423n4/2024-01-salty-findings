@@ -141,10 +141,12 @@ function performUpkeep() public nonReentrant
 ```
 
 ## Audit approach
-- Day1: Read the docs and understand the protocol
-- Day2: Delve deep into the codebase to get a general code architecture understanding.
-- Day3: Delve more deeper into the smarts contracts to understand the code in more deepness.
+- Day1: Read the docs and understand the protocol, i did some research to understand AMM in deep with all the technical concepts such as arbitrage lending borrowing, price aggregator etc...
+- Day2: Delve deep into the codebase to get a general code architecture understanding. Here i try to understand the code architecture to get a good grasp of the codebase, in other words i made myself familiar with the codebase.
+- Day3: Delve more deeper into the smarts contracts to understand the code in more deepness. Here i start finding some issues and setting them aside to write the report after i have some time.
 - Day4: Compile the findings and write the reports
+
+
 
 ### Time spent:
 22 hours
