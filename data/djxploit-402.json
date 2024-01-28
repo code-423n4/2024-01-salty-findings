@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "djxploit",
+  "risk": "2",
+  "title": "Uint overflow can DOS the unstake functionality",
+  "issueId": 402,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/402"
+}
