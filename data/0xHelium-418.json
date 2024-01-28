@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xHelium",
+  "risk": "2",
+  "title": "Users can continue borrowing from unwhitelisted pools without risk of being liquidated",
+  "issueId": 418,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/418"
+}
