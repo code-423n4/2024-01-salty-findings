@@ -1,3 +1,5 @@
+# Salty.io Analysis reports
+![Imgur](https://i.imgur.com/0kcgGjN.png)
 ## Note for sponsor to contextualize the analysis
 The following analysis should be taken with the following in mind:
 - Most of the recommendation are after the codebase overview, so there is where you should look at.
@@ -147,6 +149,8 @@ function performUpkeep() public nonReentrant
 - Day2: Delve deep into the codebase to get a general code architecture understanding. Here i try to understand the code architecture to get a good grasp of the codebase, in other words i made myself familiar with the codebase.
 - Day3: Delve more deeper into the smarts contracts to understand the code in more deepness. Here i start finding some issues and setting them aside to write the report after i have some time.
 - Day4: Compile the findings and write the reports
+
+
 
 
 
