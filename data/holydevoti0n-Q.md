@@ -6,9 +6,9 @@ uint256 amountToAddForPool = ( pendingRewards[poolID] * numeratorMult ) / denomi
 ```
 
 ## Impact
-Pools that have pending rewards to be distributed will get blocked by pools that have zero rewards. Thus, the protocol will reward(standard rate 5% of existing WETH arbitrage profits from the Pools) the caller but yet the distribution of rewards will not happen accordingly. The transaction will not revert because the `Upkeep` contract adds all the calls inside try/catch blocks.
+Pools that have pending rewards to be distributed will get blocked by pools that have zero pending rewards. Thus, the protocol will reward(standard rate 5% of existing WETH arbitrage profits from the Pools) the caller but yet the distribution of rewards will not happen accordingly. The transaction will not revert because the `Upkeep` contract adds all the calls inside try/catch blocks.
 
-This will cause many users to be unfairly rewarded and also reward the caller the full amount even when the reward distribution doesn't happen as expected. As there is no guarantee that all the pools will always have rewards available when upkeep is called, this is likely to happen often in the protocol. 
+This will cause many users to be unfairly rewarded and also reward the caller the full amount even when the reward distribution doesn't happen as expected. As there is no guarantee that all the pools will always have rewards available when upkeep is called, this is likely to happen often.
 
 ## PoC
 ```solidity
