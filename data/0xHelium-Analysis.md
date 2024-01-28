@@ -1,5 +1,6 @@
 ## Note for sponsor to contextualize the analysis
 The following analysis should be taken with the following in mind:
+- Most of the recommendation are after the codebase overview, so there is where you should look at.
 - The following analysis reports of this codebase mainly adds lots of personal recommandation to improve said codebase.
 - Sponsor can use the visual representation to improve their docs and use the recommandations to improve the codebase.
 
@@ -48,7 +49,8 @@ This mechanism is gas efficient in theory, but in practice it's prone to sandwic
 Arbitrage is following WETH-> WBTC-> SALT-> WETH path, A mev can just buy some WBTC to increase the price prior to swapping WETH-> WBTC
 and sell after the swapping to make profits. To remediate consider adding a slippage protection to the arbitrage
 - Codebase is not fully decentralized as it leverage the DAO to make some decisions in the protocol, this can be remediated by making 
-the protocol fully decentralized as it will bring more trust among users; The DAO model can still be manipulated through heavy voting power.
+the protocol fully decentralized as it will bring more trust among users; The DAO model can still be manipulated through heavy voting power. Consider implementing a strong mechanism to prevent a single person from owning all the votes proposals.
+- Codebase unwhitelist some markets for some reasons, consider verifying that users cannot still borrow from the depreceated market before shutting them down, because this can incur bad debt for the protocol.
 
 ## Codebase strenghs
 - Codebase is inovating on available AMM to create a new type that incur 0 fees for swapping, especially by implementing an arbitrage into
@@ -99,8 +101,8 @@ secure but in some edge cases it can be bypassed when chainlink return the min p
 - Codebase is well structured and natspec and comments were very detailled and helpfull.
 
 ## Systemic risk
-- The DAO approach is a backdoor that can be exploited by a single entity by simply owning a large amount of voting power over other users.
-- The system relies on users calling a keeper function to keep things healthy, this have to be considered however: what if no user call that function ? what will happen ?
+- The DAO approach is a backdoor that can be exploited by a single entity by simply owning a large amount of voting power over other users. Consider a stric check for votes power to not exceed a threshold in order to avoid manipulation.
+- The system relies on users calling a keeper function to keep things healthy, this have to be considered however: what if no user call that function especially if gas fees become so high on ethereum and calling it becomes unprofitable ? what will happen ? Protocol should consider calling performUpkeep themselves in certain scenario.
 ```solidity
 function performUpkeep() public nonReentrant
 		{
@@ -145,6 +147,8 @@ function performUpkeep() public nonReentrant
 - Day2: Delve deep into the codebase to get a general code architecture understanding. Here i try to understand the code architecture to get a good grasp of the codebase, in other words i made myself familiar with the codebase.
 - Day3: Delve more deeper into the smarts contracts to understand the code in more deepness. Here i start finding some issues and setting them aside to write the report after i have some time.
 - Day4: Compile the findings and write the reports
+
+
 
 
 
