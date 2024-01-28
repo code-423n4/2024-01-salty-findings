@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "MSaptarshi",
+  "risk": "2",
+  "title": "Both reserves not checked for removing liquidity",
+  "issueId": 346,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/346"
+}
