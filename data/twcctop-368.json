@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "twcctop",
+  "risk": "2",
+  "title": "`proposeSendSALT` is possible to be dos，because every send proposal salt use same  name",
+  "issueId": 368,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/368"
+}
