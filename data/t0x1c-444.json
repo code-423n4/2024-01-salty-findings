@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "t0x1c",
+  "risk": "2",
+  "title": "finalizeBallot() can be griefed in cases of proposeSetContractAddress() and proposeWebsiteUpdate()",
+  "issueId": 444,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/444"
+}
