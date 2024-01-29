@@ -19,3 +19,18 @@ Mitigation: the rounding should be in favor of the system. A rounding up should 
 ```javascipt
 uint256 virtualRewardsToRemove = Math.ceilDiv(user.virtualRewards * decreaseShareAmount), user.userShare);
 ```
+
+QA3: _sendLiquidityRewards() might not send all ``liquidityRewardsAmount`` to the pools due to rounding down error. This is because when calculating the portion for each pool, there is a rounding down error:  
+
+[https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/rewards/SaltRewards.sol#L67-L68](https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/rewards/SaltRewards.sol#L67-L68)
+
+As a result, when each time performUpKeep() is called, there might be leftover ``liquidityRewardsAmount`` that has not been distributed. 
+
+Mitigation: send the leftover either to the last pool, or better yet, send it to the staking as follows in the function ``performUpKeep()``: 
+
+```
+		_sendLiquidityRewards(liquidityRewardsAmount, directRewardsForSaltUSDS, poolIDs, profitsForPools, totalProfits);
+_sendStakingRewards(salt.balanceOf(address(this)) );
+
+```
+
