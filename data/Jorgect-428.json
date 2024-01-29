@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Jorgect",
+  "risk": "2",
+  "title": "Incorrect rounding direction in _decreaseUserShare in StakingReward.sol contract",
+  "issueId": 428,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/428"
+}
