@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "VAD37",
+  "risk": "3",
+  "title": "Consistent way to make `CoreChainlinkFeed` oracle return 0 price on `MAINNET`. Allowing oracle price manipulation. Chainlink feed use `MAX_ANSWER_DELAY` 60 minutes is too short",
+  "issueId": 501,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/501"
+}
