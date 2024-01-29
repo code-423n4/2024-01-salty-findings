@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "ReadyPlayer2",
+  "risk": "2",
+  "title": "Error in Staking.sol unstaking calculation which could lead to users unstaking nothing instead of 20%",
+  "issueId": 541,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/541"
+}
