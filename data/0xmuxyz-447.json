@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xmuxyz",
+  "risk": "3",
+  "title": "A malicious actor can intentionally liquidate a lot of existing USDS debt position by a `flashloan` attack in order to gain a large amount of the liquidation rewards",
+  "issueId": 447,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/447"
+}
