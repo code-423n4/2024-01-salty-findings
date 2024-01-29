@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "ether_sky",
+  "risk": "2",
+  "title": "Remove proposals that cannot be finalized.",
+  "issueId": 490,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/490"
+}
