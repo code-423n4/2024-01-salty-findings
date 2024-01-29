@@ -61,3 +61,27 @@ function updateArbitrageIndicies() public
 				...
 		}
 ```
+### Report 3:
+#### Comment Misinterpretation
+The comment in the code provided below in the Pools.sol contract is to determine the value WETH would worth after swap with SwapAmountIn and not just proportionate value, therefore should be adjusted as provided below.
+https://github.com/code-423n4/2024-01-salty/blob/main/src/pools/Pools.sol#L301-L313
+```solidity
+>>> // Determine the WETH equivalent of swapAmountIn of swapTokenIn
+	function _determineSwapAmountInValueInETH(IERC20 swapTokenIn, uint256 swapAmountIn) internal view returns (uint256 swapAmountInValueInETH)
+{
+if ( address(swapTokenIn) == address(weth) )
+	return swapAmountIn;
+
+// All tokens within the DEX are paired with WETH (and WBTC) - so this pool will exist.
+	(uint256 reservesWETH, uint256 reservesTokenIn) = getPoolReserves(weth, swapTokenIn);
+
+if ( (reservesWETH < PoolUtils.DUST) || (reservesTokenIn < PoolUtils.DUST) )
+	return 0; // can't arbitrage as there are not enough reserves to determine swapAmountInValueInETH
+
+---    swapAmountInValueInETH = ( swapAmountIn * reservesWETH ) / reservesTokenIn;
++++    swapAmountInValueInETH = ( swapAmountIn * reservesWETH ) / ( reservesTokenIn + swapAmountIn );
+
+if ( swapAmountInValueInETH <= PoolUtils.DUST )
+	return 0;
+}
+```
