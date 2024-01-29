@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "a3yip6",
+  "risk": "3",
+  "title": "The SALT Token may be permanently locked in the InitialDistribution contract and the exchange pools can never be started.",
+  "issueId": 449,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/449"
+}
