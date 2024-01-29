@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "JollyJay",
+  "risk": "2",
+  "title": " initial value is unpredictable and depends on the previous content of the memory location",
+  "issueId": 454,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/454"
+}
