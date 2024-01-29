@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Shubham",
+  "risk": "3",
+  "title": "Initial distribution of tokens won't ever be possible if participants favour `startExchangeNo` even though the overall votes changes in favour of `startExchangeYes` at a later stage",
+  "issueId": 539,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/539"
+}
