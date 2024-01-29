@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "almurhasan",
+  "risk": "3",
+  "title": "user/MEV can frontrun and backrun the oracle update of an collateral price against USD and steal funds from the protocol(Possible arbitrage from Chainlink price discrepancy )",
+  "issueId": 504,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/504"
+}
