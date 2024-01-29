@@ -51,3 +51,9 @@ function userCollateralValueInUSD( address wallet ) public view returns (uint256
 
 ```
 
+QA5: liquidateUser() still return rewards back to the borrower.
+
+[https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/stable/CollateralAndLiquidity.sol#L140C11-L188](https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/stable/CollateralAndLiquidity.sol#L140C11-L188)
+
+Mitigation: maybe the rewards should be kept by the protocol as a penalty for the user to be insolvent. 
+
