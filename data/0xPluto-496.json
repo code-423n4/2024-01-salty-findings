@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xPluto",
+  "risk": "3",
+  "title": "Cross-Contract Signature Replay in _verifyAccess( ) function of the AccessManager.sol ",
+  "issueId": 496,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/496"
+}
