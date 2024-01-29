@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "ether_sky",
+  "risk": "2",
+  "title": "Some rewards become stuck when the token is unwhitelisted.",
+  "issueId": 471,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/471"
+}
