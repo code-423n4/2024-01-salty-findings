@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Ward",
+  "risk": "2",
+  "title": "In the event of a USDS depeg, users can be unfairly liquidated and debts can be repaid at a lower cost.",
+  "issueId": 536,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/536"
+}
