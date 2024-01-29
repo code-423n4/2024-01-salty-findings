@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "pina",
+  "risk": "2",
+  "title": "Compromised `EXPECTED_SIGNER` Address Risks: Unauthorized Access and New User Lockouts",
+  "issueId": 574,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/574"
+}
