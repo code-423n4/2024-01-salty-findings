@@ -62,6 +62,36 @@ function updateArbitrageIndicies() public
 		}
 ```
 ### Report 3:
+#### Unused Variable
+Possible Incomplete implementation in the performUpkeep(...) function of the RewardsEmitter.sol contracr. As noted in the code provided below, uint256 sum was declared and was continuously assigned a value of amountToAddForPool at every loop cycle, but `sum` was only assigned it was not used at all through the function implementation
+https://github.com/code-423n4/2024-01-salty/blob/main/src/rewards/RewardsEmitter.sol#L115-L128
+```solidity
+function performUpkeep( uint256 timeSinceLastUpkeep ) external
+   ...
+>>> uint256 sum = 0;
+for( uint256 i = 0; i < poolIDs.length; i++ )
+	{
+	bytes32 poolID = poolIDs[i];
+		// Each pool will send a percentage of the pending rewards based on the time elapsed since the last send
+	uint256 amountToAddForPool = ( pendingRewards[poolID] * numeratorMult ) / denominatorMult;
+
+	// Reduce the pending rewards so they are not sent again
+	if ( amountToAddForPool != 0 )
+		{
+		pendingRewards[poolID] -= amountToAddForPool;
+
+>>>		sum += amountToAddForPool;
+		}
+
+	// Specify the rewards that will be added for the specific pool
+	addedRewards[i] = AddedReward( poolID, amountToAddForPool );
+	}
+
+// Add the rewards so that they can later be claimed by the users proportional to their share of the StakingRewards derived contract.
+stakingRewards.addSALTRewards( addedRewards );
+}
+```
+### Report 4:
 #### Comment Misinterpretation
 The comment in the code provided below in the Pools.sol contract is to determine the value WETH would worth after swap with SwapAmountIn and not just proportionate value, therefore should be adjusted as provided below.
 https://github.com/code-423n4/2024-01-salty/blob/main/src/pools/Pools.sol#L301-L313
