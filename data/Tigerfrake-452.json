@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Tigerfrake",
+  "risk": "2",
+  "title": "Missing check for the Min/Max Price in CoreChainlinkFeed contract ",
+  "issueId": 452,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/452"
+}
