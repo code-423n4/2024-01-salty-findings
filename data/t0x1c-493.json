@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "t0x1c",
+  "risk": "3",
+  "title": "Malicious user can unstake after casting vote to manipulate ballot results",
+  "issueId": 493,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/493"
+}
