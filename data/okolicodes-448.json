@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "okolicodes",
+  "risk": "2",
+  "title": "Only main wallet can propose a change for main wallet",
+  "issueId": 448,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/448"
+}
