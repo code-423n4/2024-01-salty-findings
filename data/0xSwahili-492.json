@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xSwahili",
+  "risk": "3",
+  "title": "Initial pool depositors can be frontrun to give cheap loans at undesired rates",
+  "issueId": 492,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/492"
+}
