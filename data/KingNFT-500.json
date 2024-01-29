@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "KingNFT",
+  "risk": "2",
+  "title": "Pool's pending reward is neither sent to liquidity providers nor returned back to the protocol  while ````unwhitelistPool()````",
+  "issueId": 500,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/500"
+}
