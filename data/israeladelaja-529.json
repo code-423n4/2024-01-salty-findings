@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "israeladelaja",
+  "risk": "3",
+  "title": "Attacker can stop second confirmation ballot from starting by adding _confirm to a proposal name",
+  "issueId": 529,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/529"
+}
