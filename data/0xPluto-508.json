@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xPluto",
+  "risk": "3",
+  "title": "The addLiquidity( ) functyion in Pools.sol allows to add liquidity to non-whitelisted pools",
+  "issueId": 508,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/508"
+}
