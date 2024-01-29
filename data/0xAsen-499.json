@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xAsen",
+  "risk": "3",
+  "title": "User can become un-liquidatable by perpetually extending his cooldown",
+  "issueId": 499,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/499"
+}
