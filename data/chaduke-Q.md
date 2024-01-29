@@ -34,3 +34,20 @@ _sendStakingRewards(salt.balanceOf(address(this)) );
 
 ```
 
+QA4. userCollateralValueInUSD() might underestimate the collateral value of a user. The main problem is that it calculates ``userWBTC`` and ``userWETH``, which have a rounding down error. In particular, for userWBTC, the decimals is 8. Therefore, the maximum of round down error is 0.00000001 BTC, whose value might not be ignorable in the future when the price of BTC increases to a significant high. 
+
+[https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/stable/CollateralAndLiquidity.sol#L221-L236]
+
+Mitigation: calculate the total reserve value first and then calculate the user collateral value based on his shares:
+
+```javascript
+function userCollateralValueInUSD( address wallet ) public view returns (uint256)
+		{
+		uint256 userCollateralAmount = userShareForPool( wallet, collateralPoolID );
+		if ( userCollateralAmount == 0 )
+			return 0;
+
+		return totalCollateralValueInUSD()  * userCollateralAmount / totalShares[collateralPoolID];
+
+```
+
