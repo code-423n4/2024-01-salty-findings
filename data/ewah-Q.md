@@ -1,4 +1,4 @@
-## `depositDoubleSwapWithdraw` Allows Swaping For Same Pool
+## `depositDoubleSwapWithdraw` Allows Swapping For Same Pool
 
 ## Impact
 The function `depositDoubleSwapWithdraw` allows a user to perform a double swap and a withdrawal in one transaction. However, the function does not check if swapTokenIn and swapTokenMiddle are of the same type. Swapping USDC to USDC for ETH causes a user to swap the same token with itself, which is not a valid or useful operation. Swapping the same token with itself would not change the amount or the value of the token, rather consumes more gas than a direct swap from USDC to ETH.
