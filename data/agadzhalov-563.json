@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "agadzhalov",
+  "risk": "2",
+  "title": "# [M-2] Wrong validation in `removeLiquidity` can lead to DoS every time `_adjustReservesForSwap` is executed",
+  "issueId": 563,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/563"
+}
