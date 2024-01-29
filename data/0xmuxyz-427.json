@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xmuxyz",
+  "risk": "2",
+  "title": "A victim user may receive much less amount than expected when a victim user would call the CollateralAndLiquidity#`withdrawCollateralAndClaim()` - due to a `front-running` attack",
+  "issueId": 427,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/427"
+}
