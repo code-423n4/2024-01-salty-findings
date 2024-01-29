@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "chaduke",
+  "risk": "3",
+  "title": "repayUSDS() will double burn the repaid USDS, leading to dao member lossing usds.",
+  "issueId": 565,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/565"
+}
