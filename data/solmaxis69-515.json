@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "solmaxis69",
+  "risk": "2",
+  "title": "If a user votes for a proposal and then decides to unstake() his SALT, the votes are still counted though pool's totalShares are immediately decreased",
+  "issueId": 515,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/515"
+}
