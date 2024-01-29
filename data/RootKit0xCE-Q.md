@@ -7,14 +7,10 @@
 since SafeERC20 was imported then its better to use safeapprove instead of approve.
 
 On these contracts: 
-./pools/Pools.sol
-./dao/Proposals.sol
 ./dao/DAO.sol
 ./stable/Liquidizer.sol
 ./Upkeep.sol
-./launch/InitialDistribution.sol
 ./launch/Airdrop.sol
-./launch/BootstrapBallot.sol
 ./staking/Liquidity.sol
 ./rewards/RewardsEmitter.sol
 ./rewards/SaltRewards.sol
