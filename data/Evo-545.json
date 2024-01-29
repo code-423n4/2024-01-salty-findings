@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Evo",
+  "risk": "3",
+  "title": "An attacker can claim all SALT rewards by using claimAllRewards",
+  "issueId": 545,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/545"
+}
