@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "ArsenLupin",
+  "risk": "3",
+  "title": "User can't add liqudity of the arbitrary tokens through the depositLiquidityAndIncreaseShare in the Liquidity.sol because in the Pool.sol contract in the addLiquidity function there is a check require( msg.sender == address(collateralAndLiquidity)). Which could not proceed in case we add Liqudiity of other tokens.",
+  "issueId": 438,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/438"
+}
