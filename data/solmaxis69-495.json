@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "solmaxis69",
+  "risk": "3",
+  "title": "repayUSDS() increments burnable USDS in Liquidizer, which leads to inflated usdsThatShouldBeBurned storage variable, DAO's POL loss and potential depeg for USDS",
+  "issueId": 495,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/495"
+}
