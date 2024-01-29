@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xfave",
+  "risk": "3",
+  "title": "Liquidity::_dualZapInLiquidity() doesn't handle the slippage check properly",
+  "issueId": 467,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/467"
+}
