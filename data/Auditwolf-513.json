@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Auditwolf",
+  "risk": "3",
+  "title": "Borrowers can cause DOS by frontrunning Liquidations to increase their collateral amount by a small amount thereby increasing their cooldown periods which causes liquidation transactions to revert. ",
+  "issueId": 513,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/513"
+}
