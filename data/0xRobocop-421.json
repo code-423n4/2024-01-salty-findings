@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xRobocop",
+  "risk": "2",
+  "title": "Invalid validation when make a whitelist token proposal",
+  "issueId": 421,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/421"
+}
