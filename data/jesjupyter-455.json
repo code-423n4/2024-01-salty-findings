@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "jesjupyter",
+  "risk": "2",
+  "title": "Only swapExactTokensForTokens mode is supported which could lead to bad user experience",
+  "issueId": 455,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/455"
+}
