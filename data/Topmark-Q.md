@@ -69,7 +69,7 @@ https://github.com/code-423n4/2024-01-salty/blob/main/src/rewards/RewardsEmitter
 function performUpkeep( uint256 timeSinceLastUpkeep ) external
    ...
 >>> uint256 sum = 0;
-for( uint256 i = 0; i < poolIDs.length; i++ )
+      for( uint256 i = 0; i < poolIDs.length; i++ )
 	{
 	bytes32 poolID = poolIDs[i];
 		// Each pool will send a percentage of the pending rewards based on the time elapsed since the last send
