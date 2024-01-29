@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "oakcobalt",
+  "risk": "2",
+  "title": "USDS repaid will not be transferred to Liquidizer, but Liquidizer will still burn the amount of USDS in upkeep,  causing Liquidizer always draining protocol owned liquidity",
+  "issueId": 571,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/571"
+}
