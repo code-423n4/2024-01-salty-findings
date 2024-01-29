@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "CaeraDenoir",
+  "risk": "3",
+  "title": "Borrower can prevent getting liquidated by frontrunning the liquidate call.",
+  "issueId": 567,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/567"
+}
