@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "jesjupyter",
+  "risk": "2",
+  "title": "Lack of check on tokens with multiple entrances still makes it for arbitrage bot to gain profits",
+  "issueId": 598,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/598"
+}
