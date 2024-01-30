@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "jasonxiale",
+  "risk": "2",
+  "title": "`Proposals.proposeTokenWhitelisting` insufficient check causes token can be whitelist multiple-times",
+  "issueId": 823,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/823"
+}
