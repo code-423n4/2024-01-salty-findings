@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "grearlake",
+  "risk": "2",
+  "title": "`Pools.deposit()` and `Pools.withdraw()` can have problem with rebasing token",
+  "issueId": 887,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/887"
+}
