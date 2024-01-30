@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "kgothatso",
+  "risk": "3",
+  "title": "Blacklisted user may prevent ` claimAllRewards()`",
+  "issueId": 812,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/812"
+}
