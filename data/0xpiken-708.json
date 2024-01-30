@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xpiken",
+  "risk": "3",
+  "title": "The `pendingRewards` of a pool keeps locked in `liquidityRewardsEmitter` after the pool is unwhitelisted",
+  "issueId": 708,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/708"
+}
