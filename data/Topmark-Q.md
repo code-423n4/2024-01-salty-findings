@@ -1,28 +1,4 @@
-### Report 1:
-#### Incomplete State Boundary Implementation
-maximumWhitelistedPools can be set below the current length of whitelisted pools in the PoolsConfig.sol contract this should be corrected as provided below.
-https://github.com/code-423n4/2024-01-salty/blob/main/src/pools/PoolsConfig.sol#L87
-```solidity
-function changeMaximumWhitelistedPools(bool increase) external onlyOwner
-        {
-        if (increase)
-            {
-            if (maximumWhitelistedPools < 100)
-                maximumWhitelistedPools += 10;
-            }
-        else
-            {
-            if (maximumWhitelistedPools > 20 )
-                maximumWhitelistedPools -= 10;
-+++            if( maximumWhitelistedPools <  _whitelist.length() ){
-+++              revert("Error Message");
-+++             }
-            }
-
-		emit MaximumWhitelistedPoolsChanged(maximumWhitelistedPools);
-        }
-```
-###  Report 2:
+###  Report 1:
 #### Missing Validation check for PoolIds in PoolStats contract.
 When a pool Id is invalid it returns INVALID_POOL_ID which represents type(uint64).max, however this return value was not checked at L88-L91 in the updateArbitrageIndicies() function. This would allow invalid pool during Arbitrage and could escalate to serious problems, The return value should be checked as adjusted below.
 https://github.com/code-423n4/2024-01-salty/blob/main/src/pools/PoolStats.sol#L89-L91
@@ -61,7 +37,7 @@ function updateArbitrageIndicies() public
 				...
 		}
 ```
-### Report 3:
+### Report 2:
 #### Unused Variable
 Possible Incomplete implementation in the performUpkeep(...) function of the RewardsEmitter.sol contracr. As noted in the code provided below, uint256 sum was declared and was continuously assigned a value of amountToAddForPool at every loop cycle, but `sum` was only assigned it was not used at all through the function implementation
 https://github.com/code-423n4/2024-01-salty/blob/main/src/rewards/RewardsEmitter.sol#L115-L128
@@ -91,7 +67,7 @@ function performUpkeep( uint256 timeSinceLastUpkeep ) external
 stakingRewards.addSALTRewards( addedRewards );
 }
 ```
-### Report 4:
+### Report 3:
 #### Comment Misinterpretation
 The comment in the code provided below in the Pools.sol contract is to determine the value WETH would worth after swap with SwapAmountIn and not just proportionate value, therefore should be adjusted as provided below.
 https://github.com/code-423n4/2024-01-salty/blob/main/src/pools/Pools.sol#L301-L313
