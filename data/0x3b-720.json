@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0x3b",
+  "risk": "2",
+  "title": "Users can DOS confirmation proposals",
+  "issueId": 720,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/720"
+}
