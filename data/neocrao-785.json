@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "neocrao",
+  "risk": "2",
+  "title": "A user can exploit rounding issue to deposit only one token to the pool",
+  "issueId": 785,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/785"
+}
