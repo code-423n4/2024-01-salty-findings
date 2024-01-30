@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "zhaojohnson",
+  "risk": "3",
+  "title": "Liquidate users via changing WETH/WBTC pool's total value in USD",
+  "issueId": 655,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/655"
+}
