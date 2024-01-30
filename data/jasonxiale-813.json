@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "jasonxiale",
+  "risk": "2",
+  "title": "user might vote to the wrong proposal due to reorg",
+  "issueId": 813,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/813"
+}
