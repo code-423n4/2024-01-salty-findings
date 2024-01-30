@@ -67,7 +67,30 @@ function performUpkeep( uint256 timeSinceLastUpkeep ) external
 stakingRewards.addSALTRewards( addedRewards );
 }
 ```
+
 ### Report 3:
+#### Typo Error
+ Typographical error in comment description of tokenWhitelistingBallotWithTheMostVotes() function in the Proposals.sol contract. The correct statement as corrected below should be "number of no votes" not "number no votes".
+https://github.com/code-423n4/2024-01-salty/blob/main/src/dao/Proposals.sol#L416
+```solidity
+	// Returns the ballotID of the whitelisting ballot that currently has the most yes votes
+---	// Requires that the quorum has been reached and that the number of yes votes is greater than the number no votes
++++	// Requires that the quorum has been reached and that the number of yes votes is greater than the number of no votes
+	function tokenWhitelistingBallotWithTheMostVotes() external view returns (uint256)
+{
+uint256 quorum = requiredQuorumForBallotType( BallotType.WHITELIST_TOKEN);
+
+uint256 bestID = 0;
+uint256 mostYes = 0;
+for( uint256 i = 0; i < _openBallotsForTokenWhitelisting.length(); i++ )
+	{
+	...
+	}
+
+return bestID;
+}
+```
+### Report 4:
 #### Comment Misinterpretation
 The comment in the code provided below in the Pools.sol contract is to determine the value WETH would worth after swap with SwapAmountIn and not just proportionate value, therefore should be adjusted as provided below.
 https://github.com/code-423n4/2024-01-salty/blob/main/src/pools/Pools.sol#L301-L313
