@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Toshii",
+  "risk": "2",
+  "title": "Malicious user can atomically take up to 1% of rewards for all newly whitelisted pools, by using DUST LP",
+  "issueId": 1029,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/1029"
+}
