@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "niroh",
+  "risk": "3",
+  "title": "DAO can be hijacked by an exploiter who gets a large share of the airdrop (i.e. through a sybil attack) by replacing the AccesManager contract ",
+  "issueId": 798,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/798"
+}
