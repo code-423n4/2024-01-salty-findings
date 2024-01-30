@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "saneryee",
+  "risk": "2",
+  "title": "No Maximum Limit for `bestArbAmountIn` in `ArbitrageSearch.sol`",
+  "issueId": 719,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/719"
+}
