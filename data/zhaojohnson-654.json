@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "zhaojohnson",
+  "risk": "3",
+  "title": "borrowers cannot be liquidated because of cooldownExpiration",
+  "issueId": 654,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/654"
+}
