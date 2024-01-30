@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Arz",
+  "risk": "2",
+  "title": "The liquidity provider can fail to withdraw his liquidity if he gets blacklisted",
+  "issueId": 958,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/958"
+}
