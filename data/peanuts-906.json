@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "peanuts",
+  "risk": "3",
+  "title": "Users can unstake and then cancel their stake immediately to game the rewards in StakingRewards.sol",
+  "issueId": 906,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/906"
+}
