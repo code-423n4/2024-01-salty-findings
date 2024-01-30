@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "forgebyola",
+  "risk": "3",
+  "title": "BootstrapBallot can be DOS preventing the exchange from initializing at launch",
+  "issueId": 955,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/955"
+}
