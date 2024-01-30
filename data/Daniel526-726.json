@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Daniel526",
+  "risk": "2",
+  "title": "The Liquidity contract doesn't reject the dual zap for non-whitelisted pools.",
+  "issueId": 726,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/726"
+}
