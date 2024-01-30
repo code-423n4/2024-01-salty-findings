@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "devAnas",
+  "risk": "2",
+  "title": "Lack of voting duration allows users to vote even after the voting completion time.",
+  "issueId": 898,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/898"
+}
