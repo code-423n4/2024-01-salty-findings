@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xpiken",
+  "risk": "3",
+  "title": "It does not check if the pool has ever been whitelisted before when whitelisting it",
+  "issueId": 702,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/702"
+}
