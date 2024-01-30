@@ -28,7 +28,7 @@ The QA report highlights several issues in the codebase. One critical issue ([L-
 | R-04         | Consider adding remaining amount event          | 1                   |
 
 
-## [L-01] Cooldown period will be added even if price not changed
+## [L-01] Cooldown period will be added even if the price is not changed
 On numbers greater than 3, the function will have a false cooldown change and a false emit.
 ### Instances
 * [PriceAggregator.sol #61](https://github.com/code-423n4/2024-01-salty/blob/main/src/price_feed/PriceAggregator.sol#L61)
@@ -138,7 +138,7 @@ Add a final else statement and revert or return.
 
 ```
 
-## [L-06] Check if pool already whitelisted
+## [L-06] Check if pool is already whitelisted
 ### Instances
 * [PoolsConfig.sol #53]()
 ```solidity
@@ -168,7 +168,7 @@ Add a final else statement and revert or return.
 ```
 
 ## [N-02] Add else and revert on else
-Should add an else statment and revert with an error message instead of returning the variable un-initialized with zero value
+Should add an else statement and revert with an error message instead of returning the variable un-initialized with zero value
 ### Instances
 * [Pools.sol #340](https://github.com/code-423n4/2024-01-salty/blob/main/src/pools/Pools.sol#L340)
 ```solidity
@@ -189,7 +189,7 @@ Should add an else statment and revert with an error message instead of returnin
 
 ```
 
-## [N-04] Emit vote updated in case of vote update, and vote casted in case of vote cast
+## [N-04] Emit vote updated in case of vote update, and vote casted in case of a vote cast
 ### Instances
 * [Proposals.sol #292](https://github.com/code-423n4/2024-01-salty/blob/main/src/dao/Proposals.sol#L292)
 ```solidity
@@ -222,7 +222,7 @@ Tokens with decimals above 18 may break the contract
 
 
 ## [N-06] Function requires more comments
-add comments to describe function behaviour, input and output
+add comments to describe function behavior, input, and output
 ### Instances
 * [Proposals.sol #81](https://github.com/code-423n4/2024-01-salty/blob/main/src/dao/Proposals.sol#L81)
 ```solidity
@@ -247,7 +247,7 @@ function _possiblyCreateProposal( string memory ballotName, BallotType ballotTyp
 * [Pools.sol #366](https://github.com/code-423n4/2024-01-salty/blob/main/src/pools/Pools.sol#L366)
 
 
-## [R-04] Consider adding remaining amount or wallet closed event on paying the full amount
+## [R-04] Consider adding the remaining amount or wallet closed event on paying the full amount
 ### Instances
 * [CollateralAndLiquidity.sol #131](https://github.com/code-423n4/2024-01-salty/blob/main/src/stable/CollateralAndLiquidity.sol#L131)
 ```solidity
