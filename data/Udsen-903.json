@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Udsen",
+  "risk": "3",
+  "title": "MALICIOUS BORROWER CAN AVOID LIQUIDATION BY UPDATING THE `user.cooldownExpiration` TIMESTAMP THUS INCURRING LOSS OF FUNDS ON THE PROTOCOL",
+  "issueId": 903,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/903"
+}
