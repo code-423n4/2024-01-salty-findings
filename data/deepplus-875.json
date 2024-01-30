@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "deepplus",
+  "risk": "3",
+  "title": "Since the `formPOL` function doesn't refund the left token, tokens can be locked in the `DAO` contract.",
+  "issueId": 875,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/875"
+}
