@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xSwahili",
+  "risk": "3",
+  "title": "LP providers can rceive ZERO liquidity due to a missing check on the minLiquidityReceived",
+  "issueId": 644,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/644"
+}
