@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "juancito",
+  "risk": "2",
+  "title": "Chainlink price feed uses BTC/USD feed instead of one with WBTC",
+  "issueId": 632,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/632"
+}
