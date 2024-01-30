@@ -151,13 +151,21 @@ Uses Consensys Solidity Metrics
 
 [![Screenshot-from-2024-01-30-12-53-45.png](https://i.postimg.cc/R09vW8Qb/Screenshot-from-2024-01-30-12-53-45.png)](https://postimg.cc/G4MWNXfk)
 
-## Call graph of `src` contracts
+## Call graph of `Price_feed` contracts
 
-[![Screenshot-from-2024-01-23-21-31-57.png](https://i.postimg.cc/J4H3LypK/Screenshot-from-2024-01-23-21-31-57.png)](https://postimg.cc/4mZHv3kh)
+[![Screenshot-from-2024-01-30-15-46-04.png](https://i.postimg.cc/SKZfSKhb/Screenshot-from-2024-01-30-15-46-04.png)](https://postimg.cc/R3HHG4hg)
+
+## Call graph of `Rewards` contracts
+
+[![Screenshot-from-2024-01-30-15-47-49.png](https://i.postimg.cc/L8Wsmdb0/Screenshot-from-2024-01-30-15-47-49.png)](https://postimg.cc/ZWrmLQZr)
+
+## Call graph of `Staking` contracts
+
+[![Screenshot-from-2024-01-30-15-53-21.png](https://i.postimg.cc/nL5TKLwY/Screenshot-from-2024-01-30-15-53-21.png)](https://postimg.cc/QBQphjDH)
 
 ## Contract Integration Graph
 
-[![Screenshot-from-2024-01-23-23-43-44.png](https://i.postimg.cc/mZCbkQSd/Screenshot-from-2024-01-23-23-43-44.png)](https://postimg.cc/SjQ0tY38)
+[![Screenshot-from-2024-01-30-15-54-15.png](https://i.postimg.cc/5yfz8d1S/Screenshot-from-2024-01-30-15-54-15.png)](https://postimg.cc/cg56Nzvv)
 
 
 # High Level Domain Model
@@ -184,12 +192,11 @@ This domain model provides an overview of the key components  and how they are i
    
    a. **Installation and Setup:**
       - Foundry was installed using the command `curl -L https://foundry.paradigm.xyz | bash`, followed by `foundryup` to ensure the latest version was in use.
-      - Dependencies were installed using `forge install`and `pnpm i`, ensuring all necessary components were available for the testing process.
+      - Dependencies were installed using `forge install`, ensuring all necessary components were available for the testing process.
       - Then to run the tests, I simply added the relevant files to the .env, referencing .env.example.
    
    b. **Execution of Tests:**
-      - Tests were run using `forge test`, executing a suite of predefined test cases that covered various functionalities and scenarios within the reNFT contracts.
-      - A gas report was generated using `forge test --gas-report`. This report provided insights into the gas efficiency of the contracts, which is crucial for optimizing transaction costs on the blockchain.
+      - Tests were run using `forge test COVERAGE="yes" NETWORK="sep" forge test -vv --rpc-url http://x.x.x.x:yyy`, executing a suite of predefined test cases that covered various functionalities and scenarios.
    
    c. **Test Coverage and Documentation:**
       - The overview of the testing suite, as referred to in the provided documentation, likely details the scope, scenarios, and objectives of each test, ensuring a comprehensive assessment of the contracts.
@@ -198,7 +205,7 @@ This domain model provides an overview of the key components  and how they are i
 ### What did the project do differently? ;
 -   1) It can be said that the developers of the project did a quality job, there is a test structure consisting of tests with quality content. In particular, tests have been written successfully.
 
--   2) Overall line coverage percentage provided by your tests : 75
+-   2) Overall line coverage percentage provided by your tests : 99
 
 ### What could they have done better?
 
@@ -211,7 +218,6 @@ Ref:https://xin-xia.github.io/publication/icse194.pdf
 
 [![nabeel-1.jpg](https://i.postimg.cc/6qtBdLQW/nabeel-1.jpg)](https://postimg.cc/bDVXPnbW)
 
-- 2) Test Coverage of the protocol is around 75% which is very less, the recommended test coverage of any protocol is above 90% so it is recommended to increase the coverage to at least 90%
 
 ## f) Security Approach of the Project
 
@@ -315,9 +321,6 @@ Note: I didn't tracked the time, the time I mentioned is just an estimate
 5 hours
 
 
-
-### Time spent:
-5 hours
 
 ### Time spent:
 5 hours
