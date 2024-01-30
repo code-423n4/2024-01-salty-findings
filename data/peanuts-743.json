@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "peanuts",
+  "risk": "3",
+  "title": "First depositor of a new pool can manipulate the totalRewards balance, making subsequent depositors unable to remove liquidity or earn rewards",
+  "issueId": 743,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/743"
+}
