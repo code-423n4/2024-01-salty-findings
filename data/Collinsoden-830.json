@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Collinsoden",
+  "risk": "2",
+  "title": "Possible revert due to division by zero error in  Staking.calculateUnstake   if `` unstakeRage `  is zero",
+  "issueId": 830,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/830"
+}
