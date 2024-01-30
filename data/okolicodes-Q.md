@@ -1,5 +1,5 @@
 # [L-01] Stuck eth in the manageWallet contract
-
+https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/ManagedWallet.sol#L12C1-L14C4
 
 In the `manageWallet` contract the logic behind the confirmation of proposed wallets is a receive function that `receives` some `amount` of eth
    ```solidity
@@ -17,13 +17,7 @@ The issue here is that there is no way eth could be transferred out since there 
 ## Recommendation
 Implement a transfer function so that the eth inside the contract can be transferred out and be utilized.  
 
-# [L-02] Breaking of protocol AMM invariant
-
-
-
-## Recommendation
-
-# [L-03] no check for roundID could affect price
+# [L-02] no check for roundID could affect price
 https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/price_feed/CoreChainlinkFeed.sol#L32C3-L56C13
 In the Price Aggregator Contract some important checks are made to the return values of `thelatestRoundData` function.
 ```solidity
@@ -62,7 +56,7 @@ if ( price < 0 )
 ```solidity
 require(answeredInRound >= roundId, "Price stale");
 ```
-# [L-04] Missing check for the max/min price in the `CoreChainlinkFeed.sol` contract
+# [L-03] Missing check for the max/min price in the `CoreChainlinkFeed.sol` contract
 https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/price_feed/CoreChainlinkFeed.sol#L32C3-L56C13
 The `CoreChainlinkFeed.sol` The contract uses the aggregator v3 to call the latestRoundData. the function should check for the min and max amount return to prevent this type of edge cases:
 https://solodit.xyz/issues/m-16-chainlinkadapteroracle-will-return-the-wrong-price-for-asset-if-underlying-aggregator-hits-minanswer-sherlock-blueberry-blueberry-git
