@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Toshii",
+  "risk": "2",
+  "title": "Users can improperly boost their vote for a proposal to manipulate quorum check",
+  "issueId": 892,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/892"
+}
