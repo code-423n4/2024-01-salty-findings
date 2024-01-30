@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Infect3d",
+  "risk": "3",
+  "title": "A user can prevent being liquidated by adding few wei of collateral just before liquidator call",
+  "issueId": 921,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/921"
+}
