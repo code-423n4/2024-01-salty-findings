@@ -271,7 +271,9 @@ Secondly, because the launch contracts are set in `ExchangeConfig` via a functio
 ```
 
 ### Recommendation
-Make the `ExchangeConfig::setContracts()` function callable more than once by trusted contract.
+Add logic for a workaround whereby all these contracts needn't be re-deployed such as making the `ExchangeConfig::setContracts()` function callable by a trusted contract in the case the ballot fails.
+
+# Non-Critical
 
 ## N-01 Redundant calculation of "sum"
 
@@ -309,6 +311,8 @@ In RewardsEmitter::performUpkeep a sum variable is set and updated but never use
 		stakingRewards.addSALTRewards( addedRewards );
 		}
 ```
+
+
 
 ### Time spent:
 50 hours
