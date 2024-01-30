@@ -1,4 +1,5 @@
-## The minimum collateral value can be bypassed
+## The minimum collateral value can be bypassed, no liquidation incentive for 
+   small borrows
 
 ## Summary 
 
@@ -170,15 +171,15 @@ This added to the fact that if a position is below 20 weth and 20 wbtc (in wei),
 		uint256 rewardedWETH = (reclaimedWETH * rewardPercent) / 100; 
 
 ```
-because 19 * 5 / 100 < 1, this will return 0. Excluding gas costs. liquidators don't have any incentive to liquidate this position.
+because 19 * 5 / 100 < 1, this will return 0. With gas costs, liquidators don't have any incentive to liquidate this position.
 
-## imapct
+## impact
 
-This way a lot of insignificant could be opened and flood the system. Of
+This way a lot of insignificant could be opened and flood the system, and generate bad debt amount.
 
 ## Recommended Mitigation Steps
 
-Make sure that position that are actively borrowing need to have at least have `minimumCollateralValueForBorrowing`. Only when repaying the debt this collateral should be withdrawable.
+Make sure that position that are actively borrowing need to have at least have `minimumCollateralValueForBorrowing`. Only when repaying the debt this collateral should be withdrawable. 
 
 
 ```diff
@@ -193,3 +194,5 @@ Make sure that position that are actively borrowing need to have at least have `
 		return userCollateralAmount * maxWithdrawableValue / userCollateralValue;
    		}
 ```
+
+This will minimize the borrow flood potential
