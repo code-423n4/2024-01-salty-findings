@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Udsen",
+  "risk": "2",
+  "title": "THE `PriceAggregator.setInitialFeeds` FUNCTION CAN BE CALLED MULTIPLE TIMES BY THE `owner` EVEN THOUGH IT SHOULD BE CALLED ONLY ONCE AS PER THE FUNCTION DESIGN",
+  "issueId": 970,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/970"
+}
