@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xpiken",
+  "risk": "2",
+  "title": "`activeTimelock` might be extended or canceled by receiving ether from `confirmationWallet`before it is expired.",
+  "issueId": 664,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/664"
+}
