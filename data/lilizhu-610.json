@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "lilizhu",
+  "risk": "3",
+  "title": "Coding logic in proposeWallets renders ManagedWallet deadlock",
+  "issueId": 610,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/610"
+}
