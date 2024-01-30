@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Infect3d",
+  "risk": "2",
+  "title": "Residual approvals will cause `_depositLiquidityAndIncreaseShare` to revert for some tokens (e.g USDT)",
+  "issueId": 926,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/926"
+}
