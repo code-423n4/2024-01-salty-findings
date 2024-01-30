@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xAadi",
+  "risk": "2",
+  "title": "Vulnerability to Overwriting Decisions and Lack of Refunds During Wallet Proposal Confirmation or Rejection in `ManagedWallet` Contract",
+  "issueId": 1034,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/1034"
+}
