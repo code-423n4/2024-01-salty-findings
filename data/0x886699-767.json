@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0x886699",
+  "risk": "2",
+  "title": "The  input parameter of StakingRewards.claimAllRewards() should be checked ,and parameter poolID also need to check",
+  "issueId": 767,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/767"
+}
