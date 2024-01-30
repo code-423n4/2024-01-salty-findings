@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "peanuts",
+  "risk": "2",
+  "title": "ETH will be stuck in ManagedWallet.sol when wallet address is changed",
+  "issueId": 736,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/736"
+}
