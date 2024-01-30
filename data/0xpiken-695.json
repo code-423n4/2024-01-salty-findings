@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xpiken",
+  "risk": "3",
+  "title": "`CollateralAndLiquidity#liquidateUser()` might fail due to cooldown period restriction",
+  "issueId": 695,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/695"
+}
