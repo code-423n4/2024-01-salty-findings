@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "falconhoof",
+  "risk": "3",
+  "title": "Unstaking xSALT does not remove cast votes meaning user can double vote",
+  "issueId": 984,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/984"
+}
