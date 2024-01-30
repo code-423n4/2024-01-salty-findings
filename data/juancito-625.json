@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "juancito",
+  "risk": "2",
+  "title": "Proposals that didn't reach quorum should be able to be finalized without changes when the voting phase ends",
+  "issueId": 625,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/625"
+}
