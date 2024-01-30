@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "zhaojie",
+  "risk": "2",
+  "title": "sendSALT may send more than 5% of the tokens",
+  "issueId": 686,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/686"
+}
