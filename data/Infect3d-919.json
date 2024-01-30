@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Infect3d",
+  "risk": "3",
+  "title": "A user can vote for proposals and unstake right after to reduce the required quorum while maintaining its votes",
+  "issueId": 919,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/919"
+}
