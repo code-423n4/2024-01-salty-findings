@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "7ashraf",
+  "risk": "2",
+  "title": "Invariant violated, _userHasActiveProposal[msg.sender] = false while msg.sender has an active proposal",
+  "issueId": 880,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/880"
+}
