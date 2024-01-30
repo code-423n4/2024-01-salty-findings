@@ -742,3 +742,23 @@ Almost the whole implementation uses `uint256`. The shorter form was noticed onl
 ./src/pools/Pools.sol:81:       modifier ensureNotExpired(uint deadline)
 ./src/staking/Liquidity.sol:40: modifier ensureNotExpired(uint deadline)
 ```
+
+# [33] Lack of min/max duration for ballots
+
+[File: BootstrapBallot.sol](https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/launch/BootstrapBallot.sol#L34)
+```
+	constructor( IExchangeConfig _exchangeConfig, IAirdrop _airdrop, uint256 ballotDuration )
+		{
+		require( ballotDuration > 0, "ballotDuration cannot be zero" );
+
+		exchangeConfig = _exchangeConfig;
+		airdrop = _airdrop;
+
+		completionTimestamp = block.timestamp + ballotDuration;
+		}
+```
+
+In `constructor()`, parameter `ballotDuration` is responsible for setting the ballot duration. However, this parameter is nowhere validated.
+This implies, that it's possible to create a ballot voting which will end immediately (e.g. by setting `ballotDuration` to `1` ) or to create ballot voting which will be active for extremely long period of time (e.g. setting `ballotDuration` to very big number).
+
+Our recommendation is to set some `ballotDuration` restrictions (some min. and max. voting duration).
