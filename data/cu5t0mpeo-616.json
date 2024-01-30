@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "cu5t0mpeo",
+  "risk": "3",
+  "title": "The reserves of the Pools pool will be smaller than PoolUtils.DUST",
+  "issueId": 616,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/616"
+}
