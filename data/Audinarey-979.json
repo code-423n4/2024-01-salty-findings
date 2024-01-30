@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Audinarey",
+  "risk": "2",
+  "title": "Alphabet Case inconsitency can break the proposeCountryExclusion(...) and proposeCountryInclusion(...) functionality - See Coded POC",
+  "issueId": 979,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/979"
+}
