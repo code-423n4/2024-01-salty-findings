@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Audinarey",
+  "risk": "3",
+  "title": "Borrower can frontrun liquidator to avoid liquidation of their insolvent position",
+  "issueId": 999,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/999"
+}
