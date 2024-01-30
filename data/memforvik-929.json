@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "memforvik",
+  "risk": "3",
+  "title": "malicious users can front-run to cause a denial of service(DoS) for create proposals due to ballot name checks.",
+  "issueId": 929,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/929"
+}
