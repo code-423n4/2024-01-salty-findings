@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Daniel526",
+  "risk": "2",
+  "title": "Missing Exchange Access Check in depositCollateralAndIncreaseShare Function",
+  "issueId": 684,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/684"
+}
