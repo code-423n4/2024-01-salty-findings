@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "neocrao",
+  "risk": "3",
+  "title": "Managed Wallet requires sending ETH to confirm wallets, but has no mechanism to withdraw the funds, leading to locked funds",
+  "issueId": 786,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/786"
+}
