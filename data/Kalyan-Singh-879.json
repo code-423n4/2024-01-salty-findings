@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Kalyan-Singh",
+  "risk": "3",
+  "title": "Using Atomic arbitrage an attacker can knowingly make bad trades only to manipulate pool reserves and walk away with bad debts and net profit",
+  "issueId": 879,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/879"
+}
