@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "AgileJune",
+  "risk": "3",
+  "title": "The calling of function `depositLiquidityAndIncreaseShare()` with `useZapping = true`  can be failed  due to underflow on `_zapSwapAmount()`",
+  "issueId": 594,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/594"
+}
