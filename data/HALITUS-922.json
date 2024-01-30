@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "HALITUS",
+  "risk": "3",
+  "title": "DoS: Liquidation of an Undercollateralized position might fail due to Cooldown period of Wallet",
+  "issueId": 922,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/922"
+}
