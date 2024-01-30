@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "oakcobalt",
+  "risk": "2",
+  "title": "If zapping fails or loses precision, some arbitrage profits will be stuck in DAO.sol",
+  "issueId": 952,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/952"
+}
