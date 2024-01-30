@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "xiao",
+  "risk": "3",
+  "title": "No slippage protection, so attackers can build bots to front-run trades",
+  "issueId": 874,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/874"
+}
