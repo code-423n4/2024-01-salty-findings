@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "lilizhu",
+  "risk": "3",
+  "title": "[H-01] In BootstrapBallot.sol, the incorrect setting logic of ballotFinalized can lead to DOS attacks",
+  "issueId": 604,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/604"
+}
