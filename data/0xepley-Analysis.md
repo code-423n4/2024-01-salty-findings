@@ -4,7 +4,7 @@
 ### Summary
 | List |Head |Details|
 |:--|:----------------|:------|
-|a) |Overview of the Decent Project| Summary of the whole Protocol |
+|a) |Overview of the Salty.IO Project| Summary of the whole Protocol |
 |b) |Technical Architecture| Architecture of the smart contracts |
 |c) |The approach I would follow when reviewing the code | Stages in my code review and analysis |
 |d) |Analysis of the code base | What is unique? How are the existing patterns used? "Solidity-metrics" was used  |
@@ -12,43 +12,62 @@
 |f) |Security Approach of the Project | Audit approach of the Project |
 |g) |Codebase Quality | Overall Code Quality of the Project |
 |h) |Other Audit Reports and Automated Findings | What are the previous Audit reports and their analysis |
-|h) |Full representation of the project’s risk model| What are the risks associated with the project |
-|i) |Packages and Dependencies Analysis | Details about the project Packages |
-|j) |New insights and learning of project from this audit | Things learned from the project |
+|i) |Full representation of the project’s risk model| What are the risks associated with the project |
+|j) |Packages and Dependencies Analysis | Details about the project Packages |
+|k) |New insights and learning of project from this audit | Things learned from the project |
 
 
 
-## a) Overview of the Decent Project
+## a) Overview of the Salty Project
 
-Decent Project is an innovative blockchain initiative designed to address the challenges of interoperability and fluidity in transactions across multiple blockchain networks. At its core, Decent aims to simplify and streamline the process of executing transactions on various blockchains, enhancing the user experience in the decentralized finance (DeFi) and blockchain space. Here's an overview of its key aspects:
+The Salty.IO project is a comprehensive ecosystem, focusing on token staking, liquidity provision, and efficient management of digital assets. The project is designed to incentivize users to participate actively in the ecosystem through staking and liquidity provision, while also ensuring secure and efficient management of crucial wallet addresses.
 
 ### Key Features and Functionalities:
 
-1. **Cross-Chain Transactions**: Decent facilitates seamless transactions across different blockchain networks. This capability is pivotal in a landscape where assets and liquidity are spread across various chains.
+1. **Staking Rewards Management:**
+   - Manages the distribution of rewards for users staking SALT tokens or liquidity shares.
+   - Provides mechanisms for users to claim accumulated rewards based on their share in the staking pool.
 
-2. **Swapping and Bridging Mechanisms**: The platform integrates sophisticated swapping and bridging functionalities, allowing users to convert and transfer assets between different tokens and blockchains efficiently. This feature is crucial for users who engage in activities across multiple chains.
+2. **Token Staking System:**
+   - Allows users to stake SALT tokens and receive xSALT, representing their staked amount.
+   - Implements a flexible unstaking process with varying durations, influencing the amount of SALT reclaimed.
+   - Includes a feature for expedited unstaking with reduced returns, offering users a choice between speed and efficiency.
 
-3. **Fee Management**: The platform incorporates an effective fee management system, ensuring that transactions are economically viable for users and sustainable for the platform's longevity.
+3. **Secure Wallet Management:**
+   - Manages critical wallet addresses using a dual-wallet system (main and confirmation wallets).
+   - Enables secure and controlled changes to wallet addresses through a proposal and confirmation process.
+   - Incorporates a 30-day timelock for implementing confirmed changes, adding an extra layer of security.
 
-## b) Technical Architecture:
 
-Decent's architecture is built around a set of smart contracts, each serving specific roles:
 
+## b) Technical Architecture
+[![Screenshot-from-2024-01-30-23-20-24.png](https://i.postimg.cc/B6FHcCmy/Screenshot-from-2024-01-30-23-20-24.png)](https://postimg.cc/CBFRwbTH)
+<br/>
+<br/>
+<br/>
 
 | File Name               | Core Functionality                                      | Technical Characteristics                                                                                               | Importance and Management                                                 |
 |-------------------------|---------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
-| `UTB.sol`               | Universal Transaction Bridge                            | Orchestrates swaps and bridges, interfaces with `Swapper` and `BridgeAdapter`                                           | Central to transaction execution; manages swaps and bridges               |
-| `UTBExecutor.sol`       | Executes transactions                                   | Executes payment transactions, handles ERC20 and native tokens                                                          | Executes transactions post-swap/bridge, crucial for final transaction step|
-| `UTBFeeCollector.sol`   | Manages fee collection                                  | Collects fees in various scenarios, handles ERC20 and native currency                                                   | Essential for economic sustainability, manages transaction fees           |
-| `BaseAdapter.sol`       | Foundation for bridge adapters                          | Provides base functionalities and checks for bridge adapters                                                            | Basis for creating specific bridge adapters, ensures secure function calls|
-| `DecentBridgeAdapter.sol` | Manages bridging operations                            | Handles the complexities of bridging tokens across chains                                                               | Facilitates asset transfer between blockchains                           |
-| `StargateBridgeAdapter.sol` | Specialized bridge adapter using Stargate protocol | Manages bridging operations using Stargate, handles cross-chain transactions                                            | Enables efficient bridging with Stargate technology                      |
-| `SwapParams.sol`        | Library for swap parameters                             | Provides structures and potentially utility functions for swaps                                                         | Essential for defining swap operations, used across swappers             |
-| `UniSwapper.sol`        | Swapper implementation using Uniswap                    | Executes token swaps using Uniswap’s liquidity, handles swap logic                                                      | Enables token swapping, integral for transactions requiring token exchange|
-| `DcntEth.sol`           | Manages Decent's native tokens                          | ERC-20 compliant, includes minting and burning functionalities                                                          | Manages token supply, critical for token operations within Decent        |
-| `DecentEthRouter.sol`   | Manages routing and cross-chain logic                   | Handles transaction routing, bridges with LayerZero technology                                                          | Key for managing cross-chain interactions, routes transactions           |
-| `DecentBridgeExecutor.sol` | Executes bridge transactions                          | Executes transactions involving bridging, supports both WETH and native ETH                                             | Executes complex cross-chain transactions, vital for bridging operations |
+| `PoolMath.sol`          | Mathematical operations for liquidity pools             | Implements core math for pool operations, ensuring precise and efficient calculations for liquidity management         | Critical for accurate pool operations and ensuring financial stability    |
+| `CoreChainlinkFeed.sol` | Price feed using Chainlink                              | Integrates Chainlink oracles for accurate BTC and ETH prices, crucial for asset valuation in various operations        | Essential for market-relevant pricing and reducing risks in valuations    |
+| `CoreUniswapFeed.sol`   | TWAPs (Time-Weighted Average Prices) from Uniswap       | Provides TWAPs for WBTC and WETH, aiding in accurate and time-relevant pricing for these assets                        | Vital for maintaining up-to-date and fair asset pricing in the ecosystem  |
+| `PriceAggregator.sol`   | Price aggregation and validation                        | Compares different price feeds for reliability, crucial for maintaining robust and accurate pricing in the ecosystem   | Ensures price integrity by filtering out anomalies and errors in feeds    |
+| `CoreSaltyFeed.sol`     | Price retrieval using Salty.IO pools                    | Uses internal Salty.IO pools for asset pricing, adding an additional layer of pricing data                              | Adds a layer of internal validation for asset prices                      |
+| `RewardsConfig.sol`     | Management of rewards configurations                    | Sets parameters for reward distribution, including daily percentages and allocation strategies                         | Key in managing how rewards are distributed, impacting user incentives    |
+| `SaltRewards.sol`       | Handling of SALT rewards                                | Manages the distribution of SALT rewards from emissions and profits, crucial for incentivizing participation           | Central to the reward system, directly impacting user engagement          |
+| `USDS.sol`              | USDS stablecoin management                              | Manages minting and burning of USDS, pivotal for maintaining its stablecoin properties                                  | Critical for the stablecoin's integrity and trustworthiness               |
+| `StableConfig.sol`      | Configuration of stablecoin-related parameters          | Sets crucial parameters like collateral ratios and liquidation rewards, affecting the stablecoin's financial health    | Ensures the stablecoin system remains balanced and sustainable            |
+| `CollateralAndLiquidity.sol` | Collateral and liquidity management              | Manages user collateral and liquidity provisions, fundamental for the platform's lending and borrowing features        | A cornerstone for the platform's financial activities and user trust      |
+| `Liquidizer.sol`        | Token conversion and burning                            | Handles conversion of assets to USDS and burning excess tokens, important for maintaining token supply balance         | Plays a critical role in tokenomics and maintaining market equilibrium   |
+| `StakingConfig.sol`     | Configuration of staking parameters                     | Sets key staking parameters like unstake periods and percentages, affecting how users interact with staking features  | Directly influences user staking behavior and platform liquidity          |
+| `Liquidity.sol`         | Liquidity provision and management                      | Facilitates adding and withdrawing liquidity, crucial for the platform's liquidity pool operations                     | Key to ensuring sufficient liquidity in the platform's pools             |
+| `StakingRewards.sol`    | Management of staking rewards                           | Oversees the distribution of rewards for staking, a major incentive for user participation                              | Central to the platform's staking mechanism and user retention           |
+| `Staking.sol`           | SALT token staking functionalities                      | Handles the staking of SALT tokens, a fundamental aspect of the platform's tokenomics                                   | Critical for user engagement and maintaining the token's value stability |
+| `ManagedWallet.sol`     | Secure management of crucial wallet addresses           | Ensures safe and controlled management of key wallets, a crucial aspect of platform security                            | Vital for maintaining trust and security in managing significant assets  |
 
+
+<br/>
+<br/>
 
 ## c) The approach I would follow when reviewing the code
 
@@ -65,9 +84,12 @@ Accordingly, I would analyze and audit the subject in the following steps;
 |4|Slither Analysis  | [Slither Report](https://github.com/crytic/slither)| Slither report of the project for some basic analysis|
 |5|Test Suits|[Tests](https://github.com/code-423n4/2024-01-salty?tab=readme-ov-file#build--test-instructions)|In this section, the scope and content of the tests of the project are analyzed.|
 |6|Manuel Code Review|[Scope](https://github.com/code-423n4/2024-01-salty?tab=readme-ov-file#scope)||
-|7|Using Solodit for common vulnerabilities|[Solodit](https://solodit.xyz/)|Using solodit to find common vulnerabilites related to NFT protocol|
+|7|Using Solodit for common vulnerabilities|[Solodit](https://solodit.xyz/)|Using solodit to find common vulnerabilites related to Lending Borrowing protocol|
 |8|Infographic|[Figma](https://www.figma.com/)|Tried to make Visual drawings to understand the hard-to-understand mechanisms|
 |9|Special focus on Areas of  Concern|[Areas of Concern](https://github.com/code-423n4/2024-01-salty?tab=readme-ov-file#attack-ideas-where-to-look-for-bugs)|Code where I should focus more|
+
+<br/>
+<br/>
 
 ## d) Analysis of the code base
 
@@ -155,10 +177,6 @@ Uses Consensys Solidity Metrics
 
 [![Screenshot-from-2024-01-30-15-46-04.png](https://i.postimg.cc/SKZfSKhb/Screenshot-from-2024-01-30-15-46-04.png)](https://postimg.cc/R3HHG4hg)
 
-## Call graph of `Rewards` contracts
-
-[![Screenshot-from-2024-01-30-15-47-49.png](https://i.postimg.cc/L8Wsmdb0/Screenshot-from-2024-01-30-15-47-49.png)](https://postimg.cc/ZWrmLQZr)
-
 ## Call graph of `Staking` contracts
 
 [![Screenshot-from-2024-01-30-15-53-21.png](https://i.postimg.cc/nL5TKLwY/Screenshot-from-2024-01-30-15-53-21.png)](https://postimg.cc/QBQphjDH)
@@ -172,23 +190,16 @@ Uses Consensys Solidity Metrics
 
 This domain model provides an overview of the key components  and how they are interconnected.
 
-[![Screenshot-from-2024-01-23-22-57-18.png](https://i.postimg.cc/L52fwmTL/Screenshot-from-2024-01-23-22-57-18.png)](https://postimg.cc/k6YBt3Lg)
+[![Screenshot-from-2024-01-30-22-20-55.png](https://i.postimg.cc/P51HHnpR/Screenshot-from-2024-01-30-22-20-55.png)](https://postimg.cc/RWCy18T7)
 
-# Sequence diagram of Important functions
-
-## SwapAndExecute()
-
-[![Whats-App-Image-2024-01-23-at-10-59-13-PM.jpg](https://i.postimg.cc/qvx8chx0/Whats-App-Image-2024-01-23-at-10-59-13-PM.jpg)](https://postimg.cc/5XjYbtrk)
-
-## bridgeAndExecure()
-
-[![bridge.png](https://i.postimg.cc/rwbmh0bg/bridge.png)](https://postimg.cc/mPYBkDTF)
+<br/>
+<br/>
 
 ## e) Test analysis
 
  **Foundry Testing:**
    
-   Foundry, a modern smart contract testing framework, was utilized to test the reNFT contracts. This involved several key steps:
+   Foundry, a modern smart contract testing framework, was utilized to test the Salty contracts. This involved several key steps:
    
    a. **Installation and Setup:**
       - Foundry was installed using the command `curl -L https://foundry.paradigm.xyz | bash`, followed by `foundryup` to ensure the latest version was in use.
@@ -196,7 +207,7 @@ This domain model provides an overview of the key components  and how they are i
       - Then to run the tests, I simply added the relevant files to the .env, referencing .env.example.
    
    b. **Execution of Tests:**
-      - Tests were run using `forge test COVERAGE="yes" NETWORK="sep" forge test -vv --rpc-url http://x.x.x.x:yyy`, executing a suite of predefined test cases that covered various functionalities and scenarios.
+      - Tests were run using `fCOVERAGE="yes" NETWORK="sep" forge test -vv --rpc-url  https://rpc.sepolia.org`, executing a suite of predefined test cases that covered various functionalities and scenarios.
    
    c. **Test Coverage and Documentation:**
       - The overview of the testing suite, as referred to in the provided documentation, likely details the scope, scenarios, and objectives of each test, ensuring a comprehensive assessment of the contracts.
@@ -217,6 +228,287 @@ This domain model provides an overview of the key components  and how they are i
 Ref:https://xin-xia.github.io/publication/icse194.pdf
 
 [![nabeel-1.jpg](https://i.postimg.cc/6qtBdLQW/nabeel-1.jpg)](https://postimg.cc/bDVXPnbW)
+
+<br/>
+<br/>
+
+
+## Imp Test cases coverage with gas report
+
+### ExchangeConfig.sol
+
+| Function Name          | min   | avg    | median | max    | # calls |
+|------------------------|-------|--------|--------|--------|---------|
+| accessManager          | 390   | 390    | 390    | 390    | 11      |
+| airdrop                | 370   | 592    | 370    | 2370   | 9       |
+| dai                    | 237   | 237    | 237    | 237    | 1536    |
+| dao                    | 370   | 378    | 370    | 2370   | 2548    |
+| daoVestingWallet       | 391   | 1191   | 391    | 2391   | 30      |
+| initialDistribution    | 370   | 397    | 370    | 2370   | 2515    |
+| managedTeamWallet      | 238   | 238    | 238    | 238    | 47      |
+| salt                   | 260   | 260    | 260    | 260    | 6304    |
+| setAccessManager       | 620   | 23705  | 23829  | 23829  | 513     |
+| setContracts           | 1104  | 133564 | 133824 | 133824 | 511     |
+| teamVestingWallet      | 368   | 747    | 368    | 2368   | 58      |
+| transferOwnership      | 2331  | 2331   | 2331   | 2331   | 509     |
+| upkeep                 | 348   | 731    | 348    | 2348   | 334     |
+| usds                   | 238   | 238    | 238    | 238    | 2580    |
+| walletHasAccess        | 551   | 3343   | 1886   | 14386  | 2054    |
+| wbtc                   | 283   | 283    | 283    | 283    | 2120    |
+| weth                   | 239   | 239    | 239    | 239    | 3136    |
+
+### ManagedWallet.sol
+
+| Function Name                | min  | avg   | median | max   | # calls |
+|------------------------------|------|-------|--------|-------|---------|
+| activeTimelock               | 340  | 340   | 340    | 340   | 7       |
+| changeWallets                | 373  | 1924  | 2373   | 2966  | 6       |
+| confirmationWallet           | 303  | 303   | 303    | 303   | 2       |
+| mainWallet                   | 325  | 805   | 325    | 2325  | 50      |
+| proposeWallets               | 693  | 27356 | 46368  | 46368 | 12      |
+| proposedConfirmationWallet   | 324  | 324   | 324    | 324   | 3       |
+| proposedMainWallet           | 346  | 346   | 346    | 346   | 3       |
+| receive                      | 0    | 324   | 381    | 381   | 8       |
+
+### Salt.sol
+
+| Function Name          | min   | avg   | median | max   | # calls |
+|------------------------|-------|-------|--------|-------|---------|
+| approve                | 2604  | 24431 | 24604  | 24604 | 3631    |
+| balanceOf              | 583   | 752   | 583    | 2583  | 1474    |
+| burnTokensInContract   | 3921  | 6131  | 6721   | 8721  | 38      |
+| decimals               | 266   | 266   | 266    | 266   | 18      |
+| name                   | 3198  | 3198  | 3198   | 3198  | 1       |
+| symbol                 | 3263  | 3263  | 3263   | 3263  | 1       |
+| totalBurned            | 562   | 673   | 562    | 2562  | 18      |
+| totalSupply            | 349   | 820   | 349    | 2349  | 174     |
+| transfer               | 3034  | 23949 | 24934  | 29734 | 3205    |
+| transferFrom           | 879   | 21241 | 25342  | 32142 | 1178    |
+
+### DAO.sol:
+
+| Function Name               | min   | avg    | median | max    | # calls |
+|-----------------------------|-------|--------|--------|--------|---------|
+| collateralAndLiquidity      | 251   | 251    | 251    | 251    | 1       |
+| countryIsExcluded           | 825   | 1396   | 825    | 2825   | 7       |
+| daoConfig                   | 293   | 293    | 293    | 293    | 1       |
+| exchangeConfig              | 274   | 274    | 274    | 274    | 1       |
+| finalizeBallot              | 7296  | 85003  | 50499  | 520797 | 137     |
+| formPOL                     | 5950  | 208196 | 208151 | 279651 | 50      |
+| liquidityRewardsEmitter     | 272   | 272    | 272    | 272    | 1       |
+| pools                       | 294   | 294    | 294    | 294    | 307     |
+| poolsConfig                 | 294   | 294    | 294    | 294    | 1       |
+| priceAggregator             | 251   | 251    | 251    | 251    | 1       |
+| processRewardsFromPOL       | 5674  | 62314  | 74013  | 114013 | 30      |
+| proposals                   | 251   | 251    | 251    | 251    | 1       |
+| rewardsConfig               | 250   | 250    | 250    | 250    | 1       |
+| stableConfig                | 250   | 250    | 250    | 250    | 1       |
+| stakingConfig               | 295   | 295    | 295    | 295    | 1       |
+| websiteURL                  | 1318  | 2489   | 3075   | 3075   | 3       |
+| withdrawArbitrageProfits    | 2402  | 44638  | 59649  | 64449  | 34      |
+| withdrawPOL                 | 661   | 74841  | 3930   | 179861 | 21      |
+
+### DAOConfig.sol
+
+| Function Name                           | min  | avg  | median | max  | # calls |
+|-----------------------------------------|------|------|--------|------|---------|
+| arbitrageProfitsPercentPOL              | 352  | 923  | 352    | 2352 | 42      |
+| ballotMinimumDuration                   | 352  | 961  | 352    | 2352 | 220     |
+| baseBallotQuorumPercentTimes1000        | 374  | 724  | 374    | 2374 | 194     |
+| bootstrappingRewards                    | 373  | 887  | 373    | 2373 | 35      |
+| changeArbitrageProfitsPercentPOL        | 1773 | 2866 | 2084   | 4884 | 17      |
+| changeBallotDuration                    | 1772 | 2713 | 2072   | 4883 | 21      |
+| changeBaseBallotQuorumPercent           | 1773 | 2509 | 2073   | 4884 | 31      |
+| changeBootstrappingRewards              | 1771 | 2999 | 2071   | 6882 | 21      |
+| changeMaxPendingTokensForWhitelisting   | 1772 | 2918 | 2077   | 8872 | 24      |
+| changePercentPolRewardsBurned           | 1794 | 2736 | 2094   | 4905 | 21      |
+| changeRequiredProposalPercentStake      | 1751 | 2390 | 2051   | 4862 | 40      |
+| changeUpkeepRewardPercent               | 1773 | 2747 | 2073   | 4884 | 20      |
+| maxPendingTokensForWhitelisting         | 351  | 1030 | 351    | 2351 | 53      |
+| percentPolRewardsBurned                 | 350  | 850  | 350    | 2350 | 44      |
+| requiredProposalPercentStakeTimes1000   | 329  | 919  | 329    | 2329 | 227     |
+| transferOwnership                       | 2323 | 2323 | 2323   | 2323 | 466     |
+| upkeepRewardPercent                     | 351  | 802  | 351    | 2351 | 62      |
+
+### Proposals.sol
+
+| Function Name                           | min   | avg    | median | max    | # calls |
+|-----------------------------------------|-------|--------|--------|--------|---------|
+| ballotForID                             | 4651  | 4703   | 4651   | 5180   | 515     |
+| ballotIsApproved                        | 744   | 783    | 744    | 2744   | 51      |
+| canFinalizeBallot                       | 3372  | 14390  | 14721  | 20728  | 145     |
+| castVote                                | 6488  | 63761  | 77263  | 77651  | 181     |
+| createConfirmationProposal              | 6595  | 255127 | 258680 | 314216 | 14      |
+| lastUserVoteForBallot                   | 1153  | 1153   | 1153   | 1153   | 8       |
+| markBallotAsFinalized                   | 4265  | 8326   | 8144   | 11332  | 141     |
+| nextBallotID                            | 364   | 1252   | 364    | 2364   | 9       |
+| openBallots                             | 833   | 1244   | 1256   | 1609   | 6       |
+| openBallotsByName                       | 861   | 1210   | 861    | 2873   | 23      |
+| openBallotsForTokenWhitelisting         | 1163  | 1269   | 1163   | 1398   | 11      |
+| proposeCallContract                     | 5829  | 301459 | 375867 | 375867 | 5       |
+| proposeCountryExclusion                 | 5925  | 245790 | 300803 | 300803 | 6       |
+| proposeCountryInclusion                 | 5936  | 234925 | 291125 | 300825 | 10      |
+| proposeParameterBallot                  | 6763  | 273206 | 281771 | 418283 | 107     |
+| proposeSendSALT                         | 5767  | 165956 | 167908 | 322904 | 6       |
+| proposeSetContractAddress               | 6046  | 254465 | 281400 | 326390 | 21      |
+| proposeTokenUnwhitelisting              | 10259 | 126914 | 13406  | 382471 | 12      |
+| proposeTokenWhitelisting                | 5649  | 334836 | 419569 | 459409 | 27      |
+| proposeWebsiteUpdate                    | 6211  | 240083 | 301120 | 345580 | 8       |
+| requiredQuorumForBallotType             | 1391  | 4323   | 3987   | 10399  | 11      |
+| tokenWhitelistingBallotWithTheMostVotes | 5230  | 5901   | 5279   | 9205   | 8       |
+| totalVotesCastForBallot                 | 4005  | 5795   | 6069   | 8069   | 7       |
+| userHasActiveProposal                   | 563   | 563    | 563    | 563    | 2       |
+| votesCastForBallot                      | 696   | 696    | 696    | 696    | 9       |
+| winningParameterVote                    | 1047  | 1103   | 1049   | 5047   | 85      |
+
+### Deployment.sol
+
+| Function Name      | min  | avg  | median | max  | # calls |
+|--------------------|------|------|--------|------|---------|
+| DEPLOYER           | 316  | 316  | 316    | 316  | 6       |
+| dai                | 459  | 459  | 459    | 459  | 6       |
+| dao                | 438  | 2188 | 2438   | 2438 | 8       |
+| exchangeConfig     | 440  | 440  | 440    | 440  | 14      |
+| managedTeamWallet  | 415  | 415  | 415    | 415  | 6       |
+| pools              | 459  | 977  | 459    | 2459 | 27      |
+| poolsConfig        | 395  | 736  | 395    | 2395 | 41      |
+| salt               | 415  | 415  | 415    | 415  | 6       |
+| upkeep             | 416  | 1616 | 2416   | 2416 | 5       |
+| usds               | 437  | 437  | 437    | 437  | 6       |
+| wbtc               | 416  | 416  | 416    | 416  | 18      |
+| weth               | 416  | 701  | 416    | 2416 | 7       |
+
+
+### InitialDistribution.sol
+
+| Function Name            | min  | avg    | median | max    | # calls |
+|--------------------------|------|--------|--------|--------|---------|
+| airdrop                  | 260  | 260    | 260    | 260    | 1       |
+| bootstrapBallot          | 215  | 215    | 215    | 215    | 1574    |
+| collateralAndLiquidity   | 217  | 217    | 217    | 217    | 1       |
+| dao                      | 216  | 216    | 216    | 216    | 1       |
+| daoVestingWallet         | 260  | 260    | 260    | 260    | 1       |
+| distributionApproved     | 366  | 507020 | 508709 | 588609 | 318     |
+| emissions                | 238  | 238    | 238    | 238    | 1       |
+| poolsConfig              | 238  | 238    | 238    | 238    | 1       |
+| salt                     | 237  | 237    | 237    | 237    | 1       |
+| saltRewards              | 239  | 239    | 239    | 239    | 1       |
+| teamVestingWallet        | 259  | 259    | 259    | 259    | 1       |
+
+### Pools.sol
+
+| Function Name              | min   | avg   | median | max    | # calls |
+|----------------------------|-------|-------|--------|--------|---------|
+| addLiquidity               | 1148  | 47913 | 44560  | 92398  | 1847    |
+| arbitrageIndicies          | 838   | 1474  | 838    | 2838   | 22      |
+| clearProfitsForPools       | 8086  | 12044 | 8086   | 63508  | 28      |
+| deposit                    | 5600  | 28509 | 29913  | 58801  | 995     |
+| depositDoubleSwapWithdraw  | 56379 | 85017 | 85017  | 113656 | 2       |
+| depositSwapWithdraw        | 5686  | 37728 | 29973  | 84156  | 546     |
+| depositedUserBalance       | 743   | 1014  | 743    | 2743   | 140     |
+| exchangeIsLive             | 410   | 1410  | 1410   | 2410   | 4       |
+| getPoolReserves            | 1178  | 1560  | 1197   | 3197   | 574     |
+| profitsForWhitelistedPools | 9285  | 37491 | 26180  | 224644 | 29      |
+| removeLiquidity            | 6070  | 24070 | 7874   | 57472  | 203     |
+| setContracts               | 670   | 46745 | 46836  | 46836  | 512     |
+| startExchangeApproved      | 13838 | 38664 | 37843  | 93465  | 307     |
+| swap                       | 3688  | 28232 | 29662  | 84559  | 35      |
+| updateArbitrageIndicies    | 8135  | 57382 | 37157  | 922812 | 5773    |
+| withdraw                   | 3865  | 20890 | 27721  | 32521  | 41      |
+
+### PoolsConfig.sol
+
+| Function Name                             | min  | avg   | median | max    | # calls |
+|-------------------------------------------|------|-------|--------|--------|---------|
+| changeMaximumInternalSwapPercentTimes1000 | 1816 | 2908  | 2116   | 4927   | 17      |
+| changeMaximumWhitelistedPools             | 1793 | 3390  | 2104   | 8904   | 30      |
+| isWhitelisted                             | 333  | 657   | 510    | 2510   | 6266    |
+| maximumInternalSwapPercentTimes1000       | 317  | 1182  | 317    | 2317   | 67      |
+| maximumWhitelistedPools                   | 362  | 1028  | 362    | 2362   | 57      |
+| numberOfWhitelistedPools                  | 393  | 1133  | 393    | 2393   | 100     |
+| tokenHasBeenWhitelisted                   | 1084 | 3454  | 3616   | 5617   | 51      |
+| transferOwnership                         | 2352 | 2352  | 2352   | 2352   | 509     |
+| underlyingTokenPair                       | 780  | 963   | 840    | 4840   | 47666   |
+| unwhitelistPool                           | 743  | 67735 | 54909  | 155188 | 12      |
+| whitelistPool                             | 1056 | 151797| 132033 | 1015267| 5765    |
+| whitelistedPools                          | 1118 | 3317  | 2528   | 45822  | 6533    |
+
+
+### CoreSaltyFeed.sol
+
+| Function Name | min   | avg  | median | max  | # calls |
+|---------------|-------|------|--------|------|---------|
+| getPriceBTC   | 2047  | 4215 | 4215   | 6384 | 10      |
+| getPriceETH   | 1863  | 2898 | 2026   | 6363 | 9       |
+| pools         | 248   | 248  | 248    | 248  | 1       |
+| usds          | 204   | 204  | 204    | 204  | 1       |
+| wbtc          | 227   | 227  | 227    | 227  | 1       |
+| weth          | 249   | 249  | 249    | 249  | 1       |
+
+### PriceAggregator.sol
+
+| Function Name                                | min   | avg   | median | max    | # calls |
+|----------------------------------------------|-------|-------|--------|--------|---------|
+| changeMaximumPriceFeedPercentDifferenceTimes1000 | 1771 | 2821  | 2071   | 6882   | 26      |
+| changePriceFeedModificationCooldown          | 1773  | 3296  | 2084   | 4884   | 11      |
+| getPriceBTC                                  | 3430  | 7078  | 4293   | 32333  | 264     |
+| getPriceETH                                  | 3304  | 4587  | 4107   | 10743  | 246     |
+| maximumPriceFeedPercentDifferenceTimes1000   | 352   | 610   | 352    | 2352   | 31      |
+| setInitialFeeds                              | 871   | 67035 | 67163  | 67163  | 521     |
+| setPriceFeed                                 | 638   | 13023 | 7538   | 33415  | 20      |
+| transferOwnership                            | 2352  | 2352  | 2352   | 2352   | 509     |
+
+### ForcedPriceFeed.sol
+
+| Function Name | min  | avg  | median | max  | # calls |
+|---------------|------|------|--------|------|---------|
+| getPriceBTC   | 453  | 740  | 506    | 4506 | 66      |
+| getPriceETH   | 398  | 840  | 462    | 2462 | 15      |
+| setBTCPrice   | 522  | 2525 | 522    | 7422 | 31      |
+| setRevertNext | 3198 | 4698 | 5198   | 5198 | 8       |
+
+### TestChainlinkAggregator.sol
+
+| Function Name    | min   | avg   | median | max   | # calls |
+|------------------|-------|-------|--------|-------|---------|
+| latestRoundData  | 362   | 2162  | 2886   | 2896  | 9       |
+| setPrice         | 543   | 5471  | 7443   | 7443  | 7       |
+| setShouldFail    | 24462 | 24462 | 24462  | 24462 | 1       |
+| setShouldTimeout | 24441 | 24441 | 24441  | 24441 | 1       |
+
+### RewardsConfig.sol:RewardsConfig contract
+
+| Function Name                         | min   | avg  | median | max  | # calls |
+|---------------------------------------|-------|------|--------|------|---------|
+| changeEmissionsWeeklyPercent          | 1794  | 2952 | 2078   | 4886 | 9       |
+| changePercentRewardsSaltUSDS          | 1750  | 2749 | 2034   | 4842 | 11      |
+| changeRewardsEmitterDailyPercent      | 1771  | 2576 | 2055   | 6863 | 19      |
+| changeStakingRewardsPercent           | 1751  | 2450 | 2035   | 4843 | 19      |
+| emissionsWeeklyPercentTimes1000       | 351   | 551  | 351    | 2351 | 10      |
+| percentRewardsSaltUSDS                | 306   | 472  | 306    | 2306 | 12      |
+| rewardsEmitterDailyPercentTimes1000   | 329   | 429  | 329    | 2329 | 20      |
+| stakingRewardsPercent                 | 330   | 430  | 330    | 2330 | 20      |
+
+### SaltRewards.sol:SaltRewards contract
+
+| Function Name              | min   | avg    | median | max     | # calls |
+|----------------------------|-------|--------|--------|---------|---------|
+| liquidityRewardsEmitter    | 237   | 237    | 237    | 237     | 28      |
+| performUpkeep              | 4193  | 134574 | 44767  | 2330225 | 28      |
+| sendInitialSaltRewards     | 299526| 301139 | 299526 | 336126  | 315     |
+| stakingRewardsEmitter      | 215   | 215    | 215    | 215     | 28      |
+
+### TestSaltRewards.sol
+
+| Function Name                  | min    | avg   | median | max   | # calls |
+|--------------------------------|--------|-------|--------|-------|---------|
+| performUpkeep                  | 3645   | 42520 | 4518   | 157401| 4       |
+| sendInitialLiquidityRewards    | 115396 | 128460| 128460 | 141525| 2       |
+| sendInitialSaltRewards         | 3414   | 65756 | 65756  | 128098| 2       |
+| sendInitialStakingRewards      | 60174  | 60174 | 60174  | 60174 | 2       |
+| sendLiquidityRewards           | 10121  | 69770 | 84078  | 88328 | 6       |
+| sendStakingRewards             | 12968  | 44424 | 60152  | 60152 | 3       |
+
 
 
 ## f) Security Approach of the Project
@@ -258,69 +550,70 @@ https://twitter.com/Ledger/status/1735326240658100414?t=UAuzoir9uliXplerqP-Ing&s
 
 ## g) Codebase Quality
 
-Overall, I consider the quality of the ReNFT protocol codebase to be Good. The code appears to be mature and well-developed. We have noticed the implementation of various standards adhere to appropriately. Details are explained below:
+Overall, I consider the quality of the Salty.io protocol codebase to be Good. The code appears to be mature and well-developed, though there are areas for improvement, particularly in code commenting. We have noticed the implementation of various standards adhere to appropriately. Details are explained below:
 
 | Codebase Quality Categories              | Comments                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Code Maintainability and Reliability** | The code exhibits good maintainability and reliability practices. It is well-commented, making it easier to understand the logic and functionality of the contracts. However, it should be noted that the documentation of the protocol is lacking, which could impact long-term maintainability.
-| **Code Comments** | The code is adequately commented, providing insights into the purpose and functionality of various functions and sections. These comments enhance code readability and help developers understand the implementation details.
-| **Documentation** | Unfortunately, the documentation of the protocol is notably lacking. There is a need for comprehensive documentation that explains the core concepts, interactions, and usage of the smart contracts. Such documentation is essential for developers and auditors to understand the protocol thoroughly.
-| **Testing** | There are test cases but it's important to strive for higher test coverage to ensure the reliability and robustness of the protocol. A test coverage of 75% indicates that a significant portion of the code has been tested, but there may still be areas that lack coverage. It's advisable to aim for as close to 100% coverage as possible to minimize the risk of undiscovered bugs and vulnerabilities. 
-| **Code Structure and Formatting** | The code follows a structured and well-organized format. Functions and variables are appropriately named, enhancing code readability. However, additional documentation within the code, especially for complex functions and interactions, would further improve code structure and understanding.
+| **Code Maintainability and Reliability** | The codebase demonstrates a high level of maintainability and reliability. It is clear that the developers have focused on creating a robust and scalable architecture. The use of established Ethereum development patterns and adherence to Solidity best practices contributes significantly to the code's overall reliability. |
+| **Code Comments**                        | The codebase shows a lack of comprehensive comments, particularly in complex logic areas. This can make it challenging to understand the purpose and functionality of certain sections, which might hinder the onboarding of new developers and code audits. Improving the comments would significantly enhance the codebase's clarity and maintainability. |
+| **Documentation**                        | The project includes comprehensive documentation. It covers the overall architecture, functionality, and specific details about key components like staking mechanisms and wallet management. This level of documentation is essential for both developers and end-users to understand and interact with the protocol effectively. |
+| **Testing**                              | The protocol demonstrates a strong emphasis on testing, which is evident from the extensive test cases covering various scenarios. Regular and thorough testing enhances the code's stability and reduces the likelihood of unforeseen issues in a live environment. |
+| **Code Structure and Formatting**        | The code is well-structured and consistently formatted. It follows a logical structure that makes it easy to navigate and understand. Consistent formatting across the codebase not only improves readability but also indicates a professional development approach. |
+
+While the codebase is robust and well-structured, the lack of detailed comments in the code is a notable area for improvement. Enhancing the code commenting would further elevate the overall quality and accessibility of the project.
 
 
 ## h) Other Audit Reports and Automated Findings 
 
 **Automated Findings:**
-https://github.com/code-423n4/2024-01-decent/blob/main/bot-report.md
+https://github.com/code-423n4/2024-01-salty/blob/main/bot-report.md
 
 **Previous Audits**
-There isn't any Previous Audit
+[ABDK Audit](https://github.com/abdk-consulting/audits/blob/main/othernet_global_pte_ltd/ABDK_OthernetGlobalPTELTD_SaltyIO_v_2_0.pdf)
+[Trail of Bits](https://github.com/trailofbits/publications/blob/master/reviews/2023-10-saltyio-securityreview.pdf)
 
 **4naly3er report**
-https://github.com/code-423n4/2024-01-decent/blob/main/4naly3er-report.md
+https://github.com/code-423n4/2024-01-salty/blob/main/4naly3er-report.md
 
 ## i) Full representation of the project’s risk model
 
-### Systemic Risks
-**Interoperability Issues:** As a cross-chain solution, Decent relies heavily on the stability and security of other blockchains. Issues in connected networks can cascade into the Decent ecosystem.
+### 1. Admin Abuse Risks:
+- **Centralized Control Points**: The project's governance is heavily reliant on smart contracts like `ManagedWallet.sol`, `ExchangeConfig.sol`, and the `DAO`. While these contracts ostensibly distribute control, there's a risk of centralization if few actors hold significant control.
+- **Upgrade and Proposal Approval**: The `DAO` and `ManagedWallet.sol` contracts have functionalities to approve upgrades and changes. If these mechanisms are compromised or controlled by a small group, they could be used maliciously.
 
-###  Technical Risks
-**Smart Contract Vulnerabilities:** Bugs or flaws in smart contracts can lead to loss of funds or malfunctioning of the platform.
+### 2. Systemic Risks:
+- **Interconnected Contract Dependencies**: The project's DeFi ecosystem comprises various interdependent contracts (like `Liquidity.sol`, `Staking.sol`, `Emissions.sol`). A malfunction or exploitation in one contract could ripple through the entire system.\
+- **Liquidity Risks**: The liquidity pools (`Pools.sol`) are central to the ecosystem. Any liquidity crunch or imbalance can pose systemic risks.
 
-**Scalability Concerns:** As transaction volumes grow, the platform must scale without compromising performance or security.
+### 3. Technical Risks:
+- **Smart Contract Vulnerabilities**: Given the complexity of contracts like `Upkeep.sol`, `Staking.sol`, and others, there's a risk of bugs or vulnerabilities that could be exploited, despite thorough auditing.
+- **Oracle Failures**: The system relies on `PriceAggregator.sol` for market data. Any failure or manipulation in the price feeds can lead to incorrect valuations and system responses.
 
-### Integration Risks
-
-**Compatibility with Different Blockchains:**  Ensuring that Decent works seamlessly across multiple chains requires constant updates and monitoring of changes in those ecosystems.
-
-**Cross-Chain Security:** Security inconsistencies across different blockchains can expose vulnerabilities in cross-chain transactions.
+By continuously monitoring these risk factors and implementing robust mitigation strategies, Salty.IO can aim to ensure a secure and resilient DeFi ecosystem for its users.
 
 ##  j) Packages and Dependencies Analysis 📦
 
 | Package | Version | Usage | 
 | --- | --- | --- | 
-| [`Solmate`](https://www.npmjs.com/package/solmate?activeTab=dependents) | [![npm]([![images.png](https://i.postimg.cc/MK89GbgX/images.png)](https://postimg.cc/pyqfG8Wt))](https://www.npmjs.com/package/solmate?activeTab=dependents) |  Project uses latest version of Solmate 
+| [`openzeppelin`](https://www.npmjs.com/package/@openzeppelin/contracts) | [![npm]([![images.png](https://i.postimg.cc/MK89GbgX/images.png)](https://postimg.cc/pyqfG8Wt))](https://www.npmjs.com/package/@openzeppelin/contracts) |  Project uses version `4.9.3` while the recommended version is latest i.e: `5.0.1` 
 
 ## k) New insights and learning of project from this audit:
 
-After thoroughly reviewing the Decent project's codebase and documentation, several new insights and learnings have emerged.
+After thoroughly reviewing the Salty.io project's codebase and documentation, several new insights and learnings have emerged.
 
-1. **Innovative Approach to Cross-Chain Interactions**: Decent's utilization of a combination of bridging and swapping mechanisms to facilitate cross-chain transactions is a notable innovation. This approach addresses one of the most significant challenges in the blockchain ecosystem - the seamless transfer of value and interactions across different networks.
+1. **Use of Uniswap and Chainlink**: The project utilizes Uniswap for decentralized trading and Chainlink for secure and reliable external data. This combination indicates an emphasis on robustness and security in obtaining market data and executing trades.
 
-2. **Fee Management and Optimization**: The way Decent handles transaction fees, particularly in cross-chain contexts, provides valuable insights into cost optimization in blockchain applications.
+2. **Stablecoin Implementation**: The `USDS.sol` contract and related `StableConfig.sol` suggest the implementation of a stablecoin (`USDS`), backed by crypto assets like WBTC and WETH. This approach is critical for maintaining stability in a volatile crypto market.
 
-3. **Scalability and Extensibility**: Decent's architecture, especially the use of adapter patterns for bridging and swapping, demonstrates a scalable approach to blockchain development. The ability to add new swappers and bridge adapters without overhauling the core system architecture allows for future extensibility.
+3. **Rewards and Incentivization**: Contracts like `SaltRewards.sol` and `StakingRewards.sol` indicate a mechanism to reward users for participating in the ecosystem, such as through liquidity provision or staking. This is a common practice in DeFi to encourage user participation and liquidity.
 
+4. **Governance and DAO**: The use of a DAO (Decentralized Autonomous Organization) structure for governance, as seen in `DAO.sol` and `ExchangeConfig.sol`, indicates a decentralized governance model. This aligns with the broader ethos of the DeFi sector promoting community-driven decision-making.
 
+5. **Risk Management**: Contracts like `CollateralAndLiquidity.sol` and `Liquidizer.sol` show mechanisms for managing risks associated with collateralized debt positions and liquidity provision. This is essential for maintaining the system's health and user trust.
+
+Overall, your project presents a sophisticated and multifaceted DeFi ecosystem, incorporating key elements like liquidity provision, stablecoin implementation, rewards, governance, and compliance. It shows a strong alignment with DeFi's principles of open finance and community governance, while also considering critical aspects like security and risk management.
 
 Note: I didn't tracked the time, the time I mentioned is just an estimate
-
-
-### Time spent:
-5 hours
-
-
 
 ### Time spent:
 5 hours
