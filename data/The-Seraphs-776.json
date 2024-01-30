@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "The-Seraphs",
+  "risk": "2",
+  "title": "Incorrect DUST check for reserve1 when removing liquidity allows attacker to take reserve1 below DUST amount",
+  "issueId": 776,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/776"
+}
