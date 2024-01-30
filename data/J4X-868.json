@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "J4X",
+  "risk": "2",
+  "title": "Saltys Oracle can be manipulated to crash WETH or WTBC value and liquidate users if other pricefeed fails",
+  "issueId": 868,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/868"
+}
