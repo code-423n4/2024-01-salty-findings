@@ -109,4 +109,30 @@ constructor(ICollateralAndLiquidity _collateralAndLiquidity) ERC20( "USDS", "USD
 The above will remove the need for the `setCollateralAndLiquidity(...)` and the `Ownable` contract codes.
 
 
+## [L-4] Using `block.timestamp` as `deadline` does not protect the transaction.
+There are 2 instances of this
+- https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/staking/Liquidity.sol#L62
+- https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/pools/PoolUtils.sol#L67
+- https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/dao/DAO.sol#L321
+- https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/dao/DAO.sol#L372
 
+The `deadline` is the Unix timestamp after which the transaction should revert to prevent transactions to be executed at a later timestamp than the specified. 
+
+However `block.timestamp` is dynamic because even after 5 hours block.timestamp will always the timestamp at the time the transaction was executed and the below check in the `ensureNotExpired` would pass at any timestamp.
+
+```
+File: Pools.sol
+modifier ensureNotExpired(uint deadline)
+		{
+		require(block.timestamp <= deadline, "TX EXPIRED");
+		_;
+		}
+```
+
+To solve this situation the timestamp should be passed as input offchain. Frontends do this with javascript with `Math.floor(Date.now() / 1000)` and add 20minutes to it.
+
+Impact: 
+Miners can keep transactions till it incurs loss for the user for longer period because `block.timestamp` is dynamic.
+
+Recommendation:
+The `deadline` should passed as parameter and it will be something like: `1706638171`.  
