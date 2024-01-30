@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "novodelta",
+  "risk": "2",
+  "title": "Collateral positions within cooldown period can not be liquidated, which may lead to an undercollateralized loan",
+  "issueId": 782,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/782"
+}
