@@ -1,0 +1,2 @@
+1. The position of [the description parameter is wrong](https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/dao/Proposals.sol#L218). When other functions call the _possiblyCreateProposal function, the description parameter is always in the last position.
+2. [The tokenHasBeenWhitelisted function can pass in the wbtc and weth addresses at will](https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/pools/PoolsConfig.sol#L143). Passing in the wrong address may return wrong results.
