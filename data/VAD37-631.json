@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "VAD37",
+  "risk": "2",
+  "title": " `ManagedWallet.sol` is not a wallet if it does not transferout ETH transfered to it",
+  "issueId": 631,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/631"
+}
