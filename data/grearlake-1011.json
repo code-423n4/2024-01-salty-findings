@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "grearlake",
+  "risk": "2",
+  "title": "If chainlink oracle get deprecated, there is no way to update new address",
+  "issueId": 1011,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/1011"
+}
