@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xpiken",
+  "risk": "3",
+  "title": "Collateral provider can not increase their collateral before cooldown expired",
+  "issueId": 693,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/693"
+}
