@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xCiphky",
+  "risk": "2",
+  "title": "Inability to Fully Withdraw Liquidity or Liquidate Last LP left or only LP in Pool",
+  "issueId": 629,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/629"
+}
