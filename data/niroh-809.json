@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "niroh",
+  "risk": "2",
+  "title": "PriceFeed is likely to be disabled in times of volatility, causing liquidations and borrows to freeze",
+  "issueId": 809,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/809"
+}
