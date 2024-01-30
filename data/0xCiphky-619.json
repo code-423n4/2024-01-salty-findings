@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xCiphky",
+  "risk": "2",
+  "title": "Once a pool is removed from the whitelist all its pending reward will be permanently stuck",
+  "issueId": 619,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/619"
+}
