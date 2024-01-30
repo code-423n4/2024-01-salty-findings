@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "oakcobalt",
+  "risk": "2",
+  "title": "Confirmation wallet can bypass 30-day timelock completely or postpone confirmed wallet change infinitely",
+  "issueId": 1006,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/1006"
+}
