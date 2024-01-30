@@ -163,7 +163,18 @@ contract TestCollateral is Deployment
 
 ```
 
-In this test we can see that we actually don't need to continually have 2500 usd worth of collateral, it is just needed when creating the borrow. Users can easely bypass this check. This way a lot of insignificant could be opened and flood the system.
+In this test we can see that we actually don't need to continually have 2500 usd worth of collateral, it is just needed when creating the borrow. Users can easely bypass this check. 
+This added to the fact that if a position is below 20 weth and 20 wbtc (in wei), there will be no incentive to liquidate them. 
+```
+		uint256 rewardedWBTC = (reclaimedWBTC * rewardPercent) / 100; 
+		uint256 rewardedWETH = (reclaimedWETH * rewardPercent) / 100; 
+
+```
+because 19 * 5 / 100 < 1, this will return 0. Excluding gas costs. liquidators don't have any incentive to liquidate this position.
+
+## imapct
+
+This way a lot of insignificant could be opened and flood the system. Of
 
 ## Recommended Mitigation Steps
 
