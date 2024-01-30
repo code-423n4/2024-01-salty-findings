@@ -27,4 +27,29 @@ Manual
 
 Emit an Event in ``Parameters::_executeParameterChange`` to report the configuration changes.
 
+***************************************************************
+
+# L-2: Arithmetical Precision Issues 
+
+## VULNERABILITY DETAILS
+
+Non standard use of arithmetic logics . Using ``uint256 amountToSendToTeam = claimedSALT / 10; `` instead of ``(claimedSalt * 10)/ 100``
+
+
+## IMPACT
+
+Computational error .
+
+## CODE SNIPPET
+
+https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/dao/DAO.sol#L341
+
+## TOOL USED
+
+Manual
+
+##  RECOMMENDATION 
+
+Use the recommended way of calculating percentages 
+``(claimedSalt * 10)/ 100``
 
