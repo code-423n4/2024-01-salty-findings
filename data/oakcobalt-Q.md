@@ -165,9 +165,31 @@ Current `messageHash` only includes `block.chainid`, `geoVersion` and `wallet`. 
 Recommendations:
 Follow EIP-712 to include field such as contract version to prevent signature relays.
 
-### Low-08: If zapping fails during the upkeep process, some arbitrage profits can be stuck in DAO.sol. 
+### Low-08: When reserve token is less than 18 decimals, r0,r1,z0,z1 might be overscaled during zapping.
 
-In Upkeep.sol, each `performUpkeep()` will include several swapping call with zapping enabled. The issue is, that if any of the zapping fails, there will be arbitrage profits stuck in DAO.sol.
+In PoolMath.sol, `_zapSwapAmount()` will normalize `reserve0`, `reserve1`, `zapAmount0` and `zapAmount1` to the same precision if `maximumMSB>80`. But `_maximumMSB()` only return the largest msb of the four vales, which means the other three values can be much smaller than 80.
 
-The vulnerability is that 
+As an example, if msb of r0 is 90, msb of z1 is 10. `if (maximumMSB > 80)` will be true and `shift = maximumMSB - 80` which is 10. In this case z1 will be shifted right by 10, which results in 0 value for z1. z1 will be oversacled and zapping will fail.
 
+Such example could be more common when z1 is a token with much smaller decimal than r0. 
+```solidity
+//src/pools/PoolMath.sol
+    function _zapSwapAmount(
+        uint256 reserve0,
+        uint256 reserve1,
+        uint256 zapAmount0,
+        uint256 zapAmount1
+    ) internal pure returns (uint256 swapAmount) {
+...
+        if (maximumMSB > 80) shift = maximumMSB - 80;
+...
+        uint256 r0 = reserve0 >> shift;
+        uint256 r1 = reserve1 >> shift;
+        uint256 z0 = zapAmount0 >> shift;
+        uint256 z1 = zapAmount1 >> shift;
+...
+```
+(https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/pools/PoolMath.sol#L161-L168)
+
+Recommendations:
+Consider normalizing the input token decimals to a consistent decimal before performing zapping.
