@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "memforvik",
+  "risk": "2",
+  "title": "ManagedWallet implements the receive function but does not implement the transfer logic, causing ETH to be locked.",
+  "issueId": 904,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/904"
+}
