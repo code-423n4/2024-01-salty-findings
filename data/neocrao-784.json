@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "neocrao",
+  "risk": "2",
+  "title": "Remove Liquidity has missing reserve1 DUST check, which can make reserve1 to be less than DUST",
+  "issueId": 784,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/784"
+}
