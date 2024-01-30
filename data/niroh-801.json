@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "niroh",
+  "risk": "3",
+  "title": "LPs can be exploited by frontrunning liquidity additions to a new pool with an initial deposit that creates a distorted initial price",
+  "issueId": 801,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/801"
+}
