@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "HALITUS",
+  "risk": "2",
+  "title": "approve() can cause permanent DoS during liquidity deposit for some tokens",
+  "issueId": 940,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/940"
+}
