@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xmuxyz",
+  "risk": "2",
+  "title": "Lack of logic to pause some critical functions in the Pools contract for after the Salty.IO DEX would be launched",
+  "issueId": 596,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/596"
+}
