@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "inzinko",
+  "risk": "2",
+  "title": "DOS of the proposeTokenWhitelisting will happen because of the logic of the finalize ballot",
+  "issueId": 792,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/792"
+}
