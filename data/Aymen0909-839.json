@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Aymen0909",
+  "risk": "3",
+  "title": "Incorrect call to `incrementBurnableUSDS` in `repayUSDS` will lead to loss of DAO POL",
+  "issueId": 839,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/839"
+}
