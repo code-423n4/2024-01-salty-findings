@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xGreyWolf",
+  "risk": "2",
+  "title": "In `DAO::formPOL()`, `DAO::withdrawPOL()`, `Liquidity::_dualZapInLiquidity()`, swaps are executed without slippage protection, invites sandwich attacks and will cause loss of funds",
+  "issueId": 831,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/831"
+}
