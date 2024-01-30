@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "niroh",
+  "risk": "3",
+  "title": "Adding liquidity with zapping while providing only one of the tokens can cause extreme slippage that results in liquidity being drained from Salty",
+  "issueId": 805,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/805"
+}
