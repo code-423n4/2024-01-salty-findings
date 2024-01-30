@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "mgf15",
+  "risk": "2",
+  "title": "MISSING STALENESS CHECKS IN THE `latestChainlinkPrice:CoreChainlinkFeed.sol`",
+  "issueId": 825,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/825"
+}
