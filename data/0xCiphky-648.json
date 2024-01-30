@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xCiphky",
+  "risk": "2",
+  "title": "Swaps can be made for token not in the whitelist",
+  "issueId": 648,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/648"
+}
