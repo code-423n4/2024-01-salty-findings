@@ -23,6 +23,16 @@ Recommendation: Send the remaining SALT balance from the airdrop contract to the
 
 # L-03 Some DAO proposals can be hard to propose.
 
+Some proposals such as `proposeCountryInclusion`, `proposeCountryExclusion`, `proposeSetContractAddress` and `proposeWebsiteUpdate` can only be created once. For example, in other words, proposing a ballot for changing the address for priceFeed_1 is only possible if there are not active ballots for the same purpose. 
+
+So, this allows a griefing attack vector where a well-funded user may try to always spam the creation of these proposals with a dummy address after the finalization of the previous one. This can be a challenge for governance participants, since they first need to coordinate efforts to reach the quorum in order to finalize the active dummy proposal and then ensure that they can propose the valid one previous in the block than the attacker.
+
+Recommendation: 
+
+- Information can included for the identification of the ballot in order to discriminate them even if they are the same type of proposal. For example, in the case of the price feeds, the proposed new address can be used to differentiate between the attacker one and the valid one.
+
+
+
 # L-04 Reaching quorum to finalize a ballot is a too hard requirement.
 
 The current logic on making proposals only allow a user to have at most one active proposal:
