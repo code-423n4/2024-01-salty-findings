@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "PENGUN",
+  "risk": "2",
+  "title": "Reusing a SALT that has already been used for voting can allow a malicious proposal to pass and compromise the protocol.",
+  "issueId": 844,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/844"
+}
