@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Ward",
+  "risk": "2",
+  "title": "Using BTC/USD and ETH/USD price feeds with Chainlink oracle will prevent PriceAggregator from working if there is a depeg",
+  "issueId": 942,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/942"
+}
