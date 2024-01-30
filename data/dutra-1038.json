@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "dutra",
+  "risk": "3",
+  "title": "Voting power is not recalculated on ballot finalizing, which makes possible to win with a unfair amount of votes",
+  "issueId": 1038,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/1038"
+}
