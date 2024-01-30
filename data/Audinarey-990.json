@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Audinarey",
+  "risk": "3",
+  "title": "When a user’s borrow position becomes insolvent within cooldown period, the position cannot be liquidated",
+  "issueId": 990,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/990"
+}
