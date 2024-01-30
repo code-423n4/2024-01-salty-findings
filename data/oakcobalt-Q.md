@@ -120,3 +120,54 @@ function recoverSALT( uint256 unstakeID ) external nonReentrant
 
 Recommendations:
 Consider removing `unstakeID` from `_userUnstakeIDs[msg.sender]` array. Or in `unstakesForUser()` function, filter out `unstakeID` status that is not pending.
+
+### Low-06: consider using Openzeppelin's ECDSA library to prevent risk of signature malleability inherent in `ecrecover` method.
+
+In SingingTools.sol, pre-compiled `ecrecover` method is used to verify signer address. `ecrecover` method is vulnerable to signature malleability issues due to the nature of ECDSA algorithm. Consider prevent the risk by using Openzeppelin's ECDSA library.
+
+```solidity
+    function _verifySignature(
+        bytes32 messageHash,
+        bytes memory signature
+    ) internal pure returns (bool) {
+...
+        address recoveredAddress = ecrecover(messageHash, v, r, s);
+...
+``` 
+(https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/SigningTools.sol#L26)
+
+Recommendations:
+Use Openzeppline's ECDSA library.
+
+### Low-07: Consider adhering to EIP-712 signed structure data method to prevent potential signature relay attacks in occasions such as AccessManager upgrade
+
+In AccessManager.sol, a user needs to submit protocol signed signature as a proof of access to be granted access to deposit liquidity. 
+
+The issue is the `messageHash` that signature is signed on doesn't adhere to EIP-712 signed structure data standard and might be vulnerable for signature relay attacks in the future.
+
+[EIP-712](https://eips.ethereum.org/EIPS/eip-712) suggests multiple fields to be included in signed message as domain separator including version, name,etc., which prevents message collision from different versions of contracts or dapps. 
+
+Current `messageHash` only includes `block.chainid`, `geoVersion` and `wallet`. If AccessManger.sol is upgraded to a new contract, previous `geoVersion` number and same user `wallet` can be the same, which might allow users to use old signatures to get access even though their country is excluded.
+
+```solidity
+//src/AccessManager.sol
+    function _verifyAccess(
+        address wallet,
+        bytes memory signature
+    ) internal view returns (bool) {
+        bytes32 messageHash = keccak256(
+            abi.encodePacked(block.chainid, geoVersion, wallet)
+        );
+...
+```
+(https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/AccessManager.sol#L53)
+
+Recommendations:
+Follow EIP-712 to include field such as contract version to prevent signature relays.
+
+### Low-08: If zapping fails during the upkeep process, some arbitrage profits can be stuck in DAO.sol. 
+
+In Upkeep.sol, each `performUpkeep()` will include several swapping call with zapping enabled. The issue is, that if any of the zapping fails, there will be arbitrage profits stuck in DAO.sol.
+
+The vulnerability is that 
+
