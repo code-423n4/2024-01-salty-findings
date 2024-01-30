@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "c0pp3rscr3w3r",
+  "risk": "3",
+  "title": "Cooldown in _decreaseUserShare can cause Liquidity to fail",
+  "issueId": 981,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/981"
+}
