@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "0xpiken",
+  "risk": "3",
+  "title": "either `tokenA.allowance(liquidity,pools)` or `tokenB.allowance(liquidity,pools)` could be non-zero after executing `_depositLiquidityAndIncreaseShare()`",
+  "issueId": 718,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/718"
+}
