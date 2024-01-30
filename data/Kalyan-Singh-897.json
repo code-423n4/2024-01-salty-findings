@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Kalyan-Singh",
+  "risk": "2",
+  "title": "Following a single Fix arbitrage path for particular swaps can lead to lesser arbitrage profits,faliure to detect arb opportunities and pools being imbalanced for longer periods",
+  "issueId": 897,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/897"
+}
