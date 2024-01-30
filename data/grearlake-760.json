@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "grearlake",
+  "risk": "2",
+  "title": "CoreUniswapFeed._getUniswapTwapWei return wrong price when tick is negative",
+  "issueId": 760,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/760"
+}
