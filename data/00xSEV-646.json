@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "00xSEV",
+  "risk": "2",
+  "title": "`CoreChainlinkFeed` uses BTC/USD Chainlink oracle to price WBTC which can lead to DoS and undercollateralized borrowing if WBTC depegs",
+  "issueId": 646,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/646"
+}
