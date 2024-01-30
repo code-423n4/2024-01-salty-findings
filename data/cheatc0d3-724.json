@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "cheatc0d3",
+  "risk": "3",
+  "title": "Non-Atomic Updates to excludedCountries Mapping can lead to Inconsistent States and Improper Access Control",
+  "issueId": 724,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/724"
+}
