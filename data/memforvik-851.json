@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "memforvik",
+  "risk": "2",
+  "title": "There are wrong judgment conditions in function removeLiquidity，which can lead to liquidity token reserves below DUST",
+  "issueId": 851,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/851"
+}
