@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "HChang26",
+  "risk": "2",
+  "title": "Attacker can DoS `finalizeBallot()`  to prevent exchange startup",
+  "issueId": 659,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/659"
+}
