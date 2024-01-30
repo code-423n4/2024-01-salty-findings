@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "Daniel526",
+  "risk": "2",
+  "title": "Lack of Validation for Pool Existence in Liquidity Contract",
+  "issueId": 751,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/751"
+}
