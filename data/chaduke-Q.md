@@ -57,3 +57,9 @@ QA5: liquidateUser() still return rewards back to the borrower.
 
 Mitigation: maybe the rewards should be kept by the protocol as a penalty for the user to be insolvent. 
 
+QA6: function addLiquidty() checks ``maxAmountA`` and ``maxAmountB`` to make sure they are not too small (> PoolUtils.DUST). However, the real used amount is: ``addedAmountA`` and ``addedAmountB``. Since one of these values will be smaller than the original ``maxAmountA`` and ``maxAmountB``, it is better to check the amounts in ``addedAmountA`` and ``addedAmountB`` than ``maxAmountA`` and ``maxAmountB``.
+
+[https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/pools/Pools.sol#L140-L165](https://github.com/code-423n4/2024-01-salty/blob/53516c2cdfdfacb662cdea6417c52f23c94d5b5b/src/pools/Pools.sol#L140-L165)
+
+Mitigation: check ``addedAmountB`` than ``maxAmountA`` and make sure they are > PoolUtils.DUST. 
+
