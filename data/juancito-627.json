@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "juancito",
+  "risk": "2",
+  "title": "Wallet proposals aren't reset when they are rejected",
+  "issueId": 627,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/627"
+}
