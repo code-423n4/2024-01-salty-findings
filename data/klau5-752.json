@@ -1,0 +1,8 @@
+{
+  "contest": 320,
+  "handle": "klau5",
+  "risk": "2",
+  "title": "Unwhitelisting does not clear _arbitrageProfits, so re-whitelisting may result in an unfair distribution of liquidity rewards.",
+  "issueId": 752,
+  "issueUrl": "https://github.com/code-423n4/2024-01-salty-findings/issues/752"
+}
